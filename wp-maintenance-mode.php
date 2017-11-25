@@ -1,7 +1,7 @@
 <?php
 
 /**
- * WP Maintenance Mode
+ * WP Maintenance
  *
  * Plugin Name: WP Maintenance
  * Plugin URI: https://mcpenano.net
@@ -10,7 +10,7 @@
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: designmodo
- * GitHub Plugin URI: https://github.com/Designmodocom/WP-Maintenance-Mode
+ * GitHub Plugin URI: https://github.com/kosugikun/maintenance
  * GitHub Branch: master
  * Text Domain: wp-maintenance
  * License: GPL-2.0+
@@ -56,8 +56,8 @@ if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
 /**
  * FRONTEND
  */
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-mode-shortcodes.php');
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-mode.php');
+require_once(WPMM_CLASSES_PATH . 'wp-maintenance-shortcodes.php');
+require_once(WPMM_CLASSES_PATH . 'wp-maintenance.php');
 register_activation_hook(__FILE__, array('WP_Maintenance', 'activate'));
 register_deactivation_hook(__FILE__, array('WP_Maintenance', 'deactivate'));
 
