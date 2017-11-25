@@ -12,6 +12,7 @@ Here is a short description of the plugin.  This should be no more than 150 char
 
 == Description ==
 
+You can easily let me know that your page is under maintenance.
 
 == Installation ==
 
