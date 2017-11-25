@@ -168,7 +168,7 @@ if (!class_exists('WP_Maintenance')) {
 			}
 
 			// delete old options
-			delete_option('wp-maintenance-mode');
+			delete_option('wp-maintenance');
 			delete_option('wp-maintenance-msqld');
 		}
 
@@ -389,7 +389,7 @@ if (!class_exists('WP_Maintenance')) {
 			}
 
 			// set current version
-			update_option('wpmm_version', WP_Maintenance_Mode::VERSION);
+			update_option('wpmm_version', WP_Maintenance::VERSION);
 		}
 
 		/**
@@ -454,13 +454,13 @@ if (!class_exists('WP_Maintenance')) {
 				// HEADER STUFF
 				$protocol = !empty($_SERVER['SERVER_PROTOCOL']) && in_array($_SERVER['SERVER_PROTOCOL'], array('HTTP/1.1', 'HTTP/1.0')) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0';
 				$charset = get_bloginfo('charset') ? get_bloginfo('charset') : 'UTF-8';
-				$status_code = (int) apply_filters('wp_maintenance_mode_status_code', 503); // this hook will be removed in the next versions
+				$status_code = (int) apply_filters('wp_maintenance_status_code', 503); // this hook will be removed in the next versions
 				$status_code = (int) apply_filters('wpmm_status_code', 503);
 				$backtime_seconds = $this->calculate_backtime();
 				$backtime = (int) apply_filters('wpmm_backtime', $backtime_seconds);
 
 				// META STUFF
-				$title = !empty($this->plugin_settings['design']['title']) ? $this->plugin_settings['design']['title'] : get_bloginfo('name') . ' - ' . __('Maintenance Mode', $this->plugin_slug);
+				$title = !empty($this->plugin_settings['design']['title']) ? $this->plugin_settings['design']['title'] : get_bloginfo('name') . ' - ' . __('Maintenance', $this->plugin_slug);
 				$title = apply_filters('wm_title', $title); // this hook will be removed in the next versions
 				$title = apply_filters('wpmm_meta_title', $title);
 
@@ -474,7 +474,7 @@ if (!class_exists('WP_Maintenance')) {
 				$description = apply_filters('wm_meta_description', $description); // this hook will be removed in the next versions
 				$description = apply_filters('wpmm_meta_description', $description);
 
-				$keywords = __('Maintenance Mode', $this->plugin_slug);
+				$keywords = __('Maintenance', $this->plugin_slug);
 				$keywords = apply_filters('wm_meta_keywords', $keywords); // this hook will be removed in the next versions
 				$keywords = apply_filters('wpmm_meta_keywords', $keywords);
 
