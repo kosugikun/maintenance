@@ -13,7 +13,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
         private $dismissed_notices_key = 'wpmm_dismissed_notices';
 
         private function __construct() {
-            $plugin = WP_Maintenance_Mode::get_instance();
+            $plugin = WP_Maintenance::get_instance();
             $this->plugin_slug = $plugin->get_plugin_slug();
             $this->plugin_settings = $plugin->get_plugin_settings();
             $this->plugin_default_settings = $plugin->default_settings();
