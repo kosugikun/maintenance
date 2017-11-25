@@ -58,15 +58,15 @@ if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
  */
 require_once(WPMM_CLASSES_PATH . 'wp-maintenance-mode-shortcodes.php');
 require_once(WPMM_CLASSES_PATH . 'wp-maintenance-mode.php');
-register_activation_hook(__FILE__, array('WP_Maintenance_Mode', 'activate'));
-register_deactivation_hook(__FILE__, array('WP_Maintenance_Mode', 'deactivate'));
+register_activation_hook(__FILE__, array('WP_Maintenance', 'activate'));
+register_deactivation_hook(__FILE__, array('WP_Maintenance', 'deactivate'));
 
-add_action('plugins_loaded', array('WP_Maintenance_Mode', 'get_instance'));
+add_action('plugins_loaded', array('WP_Maintenance', 'get_instance'));
 
 /**
  * DASHBOARD
  */
 if (is_admin()) {
-    require_once(WPMM_CLASSES_PATH . 'wp-maintenance-mode-admin.php');
-    add_action('plugins_loaded', array('WP_Maintenance_Mode_Admin', 'get_instance'));
+    require_once(WPMM_CLASSES_PATH . 'wp-maintenance-admin.php');
+    add_action('plugins_loaded', array('WP_Maintenance_Admin', 'get_instance'));
 }
