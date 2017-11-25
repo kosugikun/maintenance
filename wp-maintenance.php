@@ -9,22 +9,20 @@
  * Version: 0.1.0
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
- * Twitter: designmodo
+ * Twitter: kosugi_kin
  * GitHub Plugin URI: https://github.com/kosugikun/maintenance
  * GitHub Branch: master
- * Text Domain: wp-maintenance
+ * Text Domain: maintenance-master
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
  */
-
 require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4p3_Factory::buildUpdateChecker(
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/maintenance/',
 	__FILE__,
-	'wp-maintenance'
+	'maintenance-master'
 );
-
 //Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
 
