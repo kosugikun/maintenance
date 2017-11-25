@@ -17,6 +17,18 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
  */
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4p3_Factory::buildUpdateChecker(
+	'https://github.com/kosugikun/maintenance/',
+	__FILE__,
+	'wp-maintenance'
+);
+
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+
 // Exit if accessed directly
 if (!defined('ABSPATH'))
     exit;
