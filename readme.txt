@@ -16,34 +16,23 @@ You can easily let me know that your page is under maintenance.
 
 == Installation ==
 
-このセクションでは、プラグインをインストールして動作させる方法について説明します。
+このセクションでは、プラグインをインストールして動作させる方法について説明します。<br>
 
 
-1.プラグインファイルを `/ wp-content / plugins / plugin-name`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。
-1. WordPressの「プラグイン」画面からプラグインを有効にする
-1.設定 - >プラグイン名画面を使用してプラグインを設定します
+1.プラグインファイルを `/ wp-content / plugins / plugin-name`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。<br>
+1. WordPressの「プラグイン」画面からプラグインを有効にする<br>
+1.設定 - >プラグイン名画面を使用してプラグインを設定します<br>
 1.（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
 
 
-
-= What about foo bar? =
-
-
-
-== Screenshots ==
-
-wpでインストールしてください。
 
 == Changelog ==
 
 = 0.1 =
 ベータリリースしました。
-
-== Arbitrary section ==
 
 
 
