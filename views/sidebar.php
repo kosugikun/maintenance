@@ -1,6 +1,6 @@
 <div id="sidebar" class="wrapper-cell">
     <div class="sidebar_box info_box">
-        <h2><?php _e('Plugin Info', $this->plugin_slug); ?></h2>
+        <h2><?php _e('プラグイン詳細', $this->plugin_slug); ?></h2>
         <div class="inside">
 			<?php $plugin_data = wpmm_plugin_info($this->plugin_slug); ?>
             <ul>
