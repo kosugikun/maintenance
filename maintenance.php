@@ -1,9 +1,9 @@
 <?php
 
 /**
- * WP Maintenance
+ * Maintenance
  *
- * Plugin Name: WP Maintenance
+ * Plugin Name: Maintenance
  * Plugin URI: https://mcpenano.net
  * Description: You can easily let me know that your page is under maintenance.
  * Version: 0.3.0-beta.3
@@ -12,7 +12,7 @@
  * Twitter: kosugi_kin
  * GitHub Plugin URI: https://github.com/kosugikun/maintenance
  * GitHub Branch: master
- * Text Domain: maintenance-master
+ * Text Domain: maintenance
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
@@ -21,7 +21,7 @@ require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/maintenance/',
 	__FILE__,
-	'wp-maintenance'
+	'maintenance'
 );
 //Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
