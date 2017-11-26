@@ -1,5 +1,5 @@
 {
-	"name": "kosugikun/maintenance",
+	"name": "kosugikun/wp-maintenance",
 	"type": "library",
 	"description": "beta",
 	"keywords": ["maintenance", "plugin updates", "automatic updates", "theme updates"],
