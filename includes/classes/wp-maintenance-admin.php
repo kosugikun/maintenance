@@ -156,13 +156,13 @@ if (!class_exists('WP_Maintenance_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('You do not have access to this resource.', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
                 }
 
                 // delete all subscribers
                 $wpdb->query("DELETE FROM {$wpdb->prefix}wpmm_subscribers");
 
-                wp_send_json_success(sprintf(__('You have %d subscriber(s)', $this->plugin_slug), 0));
+                wp_send_json_success(sprintf(__('%d個の加入者があります', $this->plugin_slug), 0));
             } catch (Exception $ex) {
                 wp_send_json_error($ex->getMessage());
             }
@@ -178,28 +178,28 @@ if (!class_exists('WP_Maintenance_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('You do not have access to this resource.', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
                 }
                 
                 // check nonce existence
                 if (empty($_POST['_wpnonce'])) {
-                    throw new Exception(__('The nonce field must not be empty.', $this->plugin_slug));
+                    throw new Exception(__('nonceフィールドは空であってはいけません。', $this->plugin_slug));
                 }
                 
                 // check tab existence
                 if (empty($_POST['tab'])) {
-                    throw new Exception(__('The tab slug must not be empty.', $this->plugin_slug));
+                    throw new Exception(__('タブスラッグは空であってはいけません。', $this->plugin_slug));
                 }
                 
                 // check nonce validation
                 if (!wp_verify_nonce($_POST['_wpnonce'], 'tab-' . $_POST['tab'])) {
-                   throw new Exception(__('Security check.', $this->plugin_slug));
+                   throw new Exception(__('セキュリティーチェック。', $this->plugin_slug));
                 }
 
                 // check existence in plugin default settings
                 $tab = $_POST['tab'];
                 if (empty($this->plugin_default_settings[$tab])) {
-                    throw new Exception(__('The tab slug must exist.', $this->plugin_slug));
+                    throw new Exception(__('タブスラッグが存在していなければなりません。', $this->plugin_slug));
                 }
 
                 // update options using the default values
@@ -247,7 +247,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
         public function save_plugin_settings() {
             if (!empty($_POST) && !empty($_POST['tab'])) {
                 if (!wp_verify_nonce($_POST['_wpnonce'], 'tab-' . $_POST['tab'])) {
-                    die(__('Security check.', $this->plugin_slug));
+                    die(__('セキュリティーチェック。', $this->plugin_slug));
                 }
 
                 // DO SOME SANITIZATIONS
