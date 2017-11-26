@@ -1,7 +1,7 @@
-<strong><?php _e('Premium WordPress Themes from WP Maintenance Mode authors!', $this->plugin_slug); ?></strong>
+<strong><?php _e('プレミアムワードプレスのテーマはWPメンテナンスモードの作者から！', $this->plugin_slug); ?></strong>
 
 <br /><br />
-	<?php _e('We hope you like the WP Maintenance Mode plugin! Now you can buy WordPress Themes directly from us on ThemeForest. We\'re StrictThemes and we create best designed and coded WordPress Themes.', $this->plugin_slug); ?>
+	<?php _e('WPメンテナンスモードのプラグインが欲しい！これで、ThemeForestでWordPressテーマを直接購入できます。私たちはStrictThemesを再構築し、最高のデザインとコード化されたWordPressテーマを作成します。', $this->plugin_slug); ?>
 <br /><br />
 
 <a class="button button-primary" href="https://themeforest.net/user/strictthemes/portfolio?utf8=%E2%9C%93&order_by=sales&ref=StrictThemes" target="_blank">
