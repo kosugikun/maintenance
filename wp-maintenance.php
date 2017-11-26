@@ -6,11 +6,11 @@
  * Plugin Name: WP Maintenance
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
- * Version: 0.3.2
+ * Version: 0.4.0
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kun
- * GitHub Plugin URI: https://github.com/kosugikun/maintenance
+ * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance
  * GitHub Branch: master
  * Text Domain: maintenance-kosugikun
  * License: GPL-2.0+
