@@ -12,7 +12,7 @@
  * Twitter: kosugi_kin
  * GitHub Plugin URI: https://github.com/kosugikun/maintenance
  * GitHub Branch: master
- * Text Domain: maintenance
+ * Text Domain: maintenance-kosugikun
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
