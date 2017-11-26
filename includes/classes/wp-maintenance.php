@@ -101,7 +101,7 @@ if (!class_exists('WP_Maintenance')) {
 					'title' => __('Maintenance mode', $this->plugin_slug),
 					'heading' => __('Maintenance mode', $this->plugin_slug),
 					'heading_color' => '',
-					'text' => __('<p>Sorry for the inconvenience.<br />Our website is currently undergoing scheduled maintenance.<br />Thank you for your understanding.</p>', $this->plugin_slug),
+					'text' => __('<p>ご不便をおかけして申し訳ございません。<br />当ウェブサイトは現在、定期的なメンテナンスを行っています。<br />ご理解いただきありがとうございます。</p>', $this->plugin_slug),
 					'text_color' => '',
 					'bg_type' => 'color',
 					'bg_color' => '',
@@ -258,7 +258,7 @@ if (!class_exists('WP_Maintenance')) {
 			if (!empty($old_options) && empty($v2_options)) {
 				add_option('wpmm_notice', array(
 					'class' => 'updated notice',
-					'msg' => sprintf(__('WP Maintenance plugin was relaunched and you MUST revise <a href="%s">settings</a>.', self::get_instance()->plugin_slug), admin_url('options-general.php?page=' . self::get_instance()->plugin_slug))
+					'msg' => sprintf(__('WPメンテナンスプラグインが再起動されたので、<a href="%s">設定</a>を改訂する必要があります。', self::get_instance()->plugin_slug), admin_url('options-general.php?page=' . self::get_instance()->plugin_slug))
 				));
 
 				// import old options
