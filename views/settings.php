@@ -3,7 +3,7 @@
 
     <?php if (!empty($_POST)) { ?>
         <div class="updated settings-error" id="setting-error-settings_updated"> 
-            <p><strong><?php _e('Settings saved.', $this->plugin_slug); ?></strong></p>
+            <p><strong><?php _e('設定を保存しました ', $this->plugin_slug); ?></strong></p>
         </div>
     <?php } ?>
 
@@ -28,17 +28,17 @@
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][bypass_bots]"><?php _e('Bypass for Search Bots', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][bypass_bots]"><?php _e('検索ボットのバイパス', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[general][bypass_bots]">
-                                            <option value="1" <?php selected($this->plugin_settings['general']['bypass_bots'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['general']['bypass_bots'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['general']['bypass_bots'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['general']['bypass_bots'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
-                                        <p class="description"><?php _e('Allow Search Bots to bypass maintenance mode?', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('検索ボットがメンテナンスモードをバイパスできるようにしますか？', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr> 
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][backend_role][]"><?php _e('Backend Role', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][backend_role][]"><?php _e('バックエンドの役割 ', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[general][backend_role][]" multiple="multiple" class="chosen-select" data-placeholder="<?php _e('Select role(s)', $this->plugin_slug); ?>">
                                             <?php
@@ -50,13 +50,13 @@
                                                 <option value="<?php echo esc_attr($role); ?>" <?php echo wpmm_multiselect((array) $this->plugin_settings['general']['backend_role'], $role); ?>><?php echo $details['name']; ?></option>
                                             <?php } ?>
                                         </select>
-                                        <p class="description"><?php _e('Which user role is allowed to access the backend of this blog? Administrators will always have access.', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('このブログのバックエンドにアクセスできるユーザーの役割は何ですか？管理者は常にアクセス権を持ちます。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>    
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][frontend_role][]"><?php _e('Frontend Role', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][frontend_role][]"><?php _e('フロントエンドの役割', $this->plugin_slug); ?></label></th>
                                     <td>	
-                                        <select name="options[general][frontend_role][]" multiple="multiple" class="chosen-select" data-placeholder="<?php _e('Select role(s)', $this->plugin_slug); ?>">
+                                        <select name="options[general][frontend_role][]" multiple="multiple" class="chosen-select" data-placeholder="<?php _e('役割を選択する', $this->plugin_slug); ?>">
                                             <?php
                                             foreach ($wp_roles->roles as $role => $details) {
                                                 if ($role == 'administrator') {
@@ -66,55 +66,55 @@
                                                 <option value="<?php echo esc_attr($role); ?>" <?php echo wpmm_multiselect((array) $this->plugin_settings['general']['frontend_role'], $role); ?>><?php echo $details['name']; ?></option>
                                             <?php } ?>
                                         </select>
-                                        <p class="description"><?php _e('Which user role is allowed to access the frontend of this blog? Administrators will always have access.', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('このブログのフロントエンドにはどのユーザーの役割にアクセスできますか？管理者は常にアクセス権を持ちます。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>   
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][meta_robots]"><?php _e('Robots Meta Tag', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][meta_robots]"><?php _e('ロボットのメタタグ', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[general][meta_robots]">
                                             <option value="1" <?php selected($this->plugin_settings['general']['meta_robots'], 1); ?>>noindex, nofollow</option>
                                             <option value="0" <?php selected($this->plugin_settings['general']['meta_robots'], 0); ?>>index, follow</option>
                                         </select>
-                                        <p class="description"><?php _e('The robots meta tag lets you use a granular, page-specific approach to control how an individual page should be indexed and served to users in search results.', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('robotsメタタグを使用すると、個別のページ固有のアプローチを使用して、個々のページのインデックスを作成し、検索結果でユーザーに提供する方法を制御できます。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>   
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][redirection]"><?php _e('Redirection', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][redirection]"><?php _e('リダイレクション', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['general']['redirection'])); ?>" name="options[general][redirection]" />
-                                        <p class="description"><?php _e('If you want to redirect a user (with no access to Dashboard/Backend) to a URL (different from WordPress Dashboard URL) after login, then define a URL (incl. http://)', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('ログイン後にユーザー（Dashboard / Backendにアクセスできない）をURL（WordPress Dashboard URLとは異なる）にリダイレクトする場合は、URL（http：//を含む）を定義する', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>                                
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][exclude]"><?php _e('Exclude', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][exclude]"><?php _e('除外', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <textarea rows="7" name="options[general][exclude]" style="width: 625px;"><?php
                                             if (!empty($this->plugin_settings['general']['exclude']) && is_array($this->plugin_settings['general']['exclude'])) {
                                                 echo implode("\n", stripslashes_deep($this->plugin_settings['general']['exclude']));
                                             }
                                             ?></textarea>
-                                        <p class="description"><?php _e('Exclude feed, pages, archives or IPs from maintenance mode. Add one slug / IP per line!', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('フィード、ページ、アーカイブまたはIPをメンテナンスモードから除外します。 1行に1つのスラッグ/ IPを追加！', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][notice]"><?php _e('Notice', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][notice]"><?php _e('通知', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[general][notice]">
-                                            <option value="1" <?php selected($this->plugin_settings['general']['notice'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['general']['notice'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['general']['notice'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['general']['notice'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
-                                        <p class="description"><?php _e('Do you want to see notices when maintenance mode is activated?', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('メンテナンスモードが有効になっているときに通知を表示しますか？', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][admin_link]"><?php _e('Dashboard link', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][admin_link]"><?php _e('ダッシュボードリンク', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[general][admin_link]">
-                                            <option value="1" <?php selected($this->plugin_settings['general']['admin_link'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['general']['admin_link'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['general']['admin_link'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['general']['admin_link'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
-                                        <p class="description"><?php _e('Do you want to add a link to the dashboard on your maintenance mode page?', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('メンテナンスモードのページでダッシュボードへのリンクを追加しますか？', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>                                 
                             </tbody>
@@ -122,18 +122,18 @@
 
                         <?php wp_nonce_field('tab-general'); ?>
                         <input type="hidden" value="general" name="tab" />
-                        <input type="submit" value="<?php _e('Save settings', $this->plugin_slug); ?>" class="button button-primary" name="submit" />
-                        <input type="button" value="<?php _e('Reset settings', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
+                        <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit" />
+                        <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
                     </form>
                 </div>
                 <div id="tab-design" class="hidden">
                     <form method="post">
-                        <h3>&raquo; <?php _e('Content', $this->plugin_slug); ?></h3>
+                        <h3>&raquo; <?php _e('コンテンツ', $this->plugin_slug); ?></h3>
 
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[design][title]"><?php _e('Title (HTML tag)', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][title]"><?php _e('タイトル（HTMLタグ）', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['design']['title'])); ?>" name="options[design][title]" />
                                     </td>
@@ -146,7 +146,7 @@
                                     </td>
                                 </tr>      
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[design][text]"><?php _e('Text', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][text]"><?php _e('テキスト', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <?php
                                         wp_editor(stripslashes($this->plugin_settings['design']['text']), 'options_design_text', array(
@@ -166,17 +166,17 @@
                             </tbody>
                         </table>
 
-                        <h3>&raquo; <?php _e('Background', $this->plugin_slug); ?></h3>
+                        <h3>&raquo; <?php _e('バックグラウンド', $this->plugin_slug); ?></h3>
 
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[design][bg_type]"><?php _e('Choose type', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][bg_type]"><?php _e('タイプを選択', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[design][bg_type]" id="design_bg_type">
-                                            <option value="color" <?php selected($this->plugin_settings['design']['bg_type'], 'color'); ?>><?php _e('Custom color', $this->plugin_slug); ?></option>
-                                            <option value="custom" <?php selected($this->plugin_settings['design']['bg_type'], 'custom'); ?>><?php _e('Uploaded background', $this->plugin_slug); ?></option>
-                                            <option value="predefined" <?php selected($this->plugin_settings['design']['bg_type'], 'predefined'); ?>><?php _e('Predefined background', $this->plugin_slug); ?></option>
+                                            <option value="color" <?php selected($this->plugin_settings['design']['bg_type'], 'color'); ?>><?php _e('カスタムカラー', $this->plugin_slug); ?></option>
+                                            <option value="custom" <?php selected($this->plugin_settings['design']['bg_type'], 'custom'); ?>><?php _e('アップロードされた背景', $this->plugin_slug); ?></option>
+                                            <option value="predefined" <?php selected($this->plugin_settings['design']['bg_type'], 'predefined'); ?>><?php _e('設定済みの背景', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>     
@@ -187,18 +187,18 @@
                                     </td>
                                 </tr>   
                                 <tr valign="top" class="design_bg_types <?php echo $this->plugin_settings['design']['bg_type'] != 'custom' ? 'hidden' : ''; ?>" id="show_custom">
-                                    <th scope="row"><label for="options[design][bg_custom]"><?php _e('Upload background', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][bg_custom]"><?php _e('背景をアップロード', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['design']['bg_custom'])); ?>" name="options[design][bg_custom]" class="upload_image_url" />
                                         <input type="button" value="Upload" class="button" id="upload_image_trigger" />
-                                        <p class="description"><?php _e('Backgrounds should have 1920x1280 px size.', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('背景には1920x1280ピクセルのサイズが必要です。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>   
                                 <tr valign="top" class="design_bg_types <?php echo $this->plugin_settings['design']['bg_type'] != 'predefined' ? 'hidden' : ''; ?>" id="show_predefined">
                                     <th scope="row">
-                                        <label for="options[design][bg_predefined]"><?php _e('Choose background', $this->plugin_slug); ?></label>
+                                        <label for="options[design][bg_predefined]"><?php _e('背景を選択', $this->plugin_slug); ?></label>
                             <p class="description">
-                                * <?php echo sprintf(__('source <a href="%s" target="_blank">Free Photos</a>', $this->plugin_slug), 'http://designmodo.com/free-photos/' . WPMM_AUTHOR_UTM); ?>
+                                * <?php echo sprintf(__('', $this->plugin_slug), 'http://designmodo.com/free-photos/' . WPMM_AUTHOR_UTM); ?>
                             </p>
                             </th>
                             <td>	
@@ -225,41 +225,41 @@
 
                         <?php wp_nonce_field('tab-design'); ?>
                         <input type="hidden" value="design" name="tab" />
-                        <input type="submit" value="<?php _e('Save settings', $this->plugin_slug); ?>" class="button button-primary" name="submit">
-                        <input type="button" value="<?php _e('Reset settings', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="design" name="submit">
+                        <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit">
+                        <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="design" name="submit">
                     </form>
                 </div>
                 <div id="tab-modules" class="hidden">
                     <form method="post">
-                        <h3>&raquo; <?php _e('Countdown', $this->plugin_slug); ?></h3>
+                        <h3>&raquo; <?php _e('カウントダウン', $this->plugin_slug); ?></h3>
 
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][countdown_status]"><?php _e('Show countdown?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][countdown_status]"><?php _e('カウントダウンを表示しますか？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][countdown_status]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['countdown_status'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['countdown_status'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['countdown_status'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['countdown_status'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>   
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][countdown_start]"><?php _e('Start date', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][countdown_start]"><?php _e('開始日', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_start'])); ?>" name="options[modules][countdown_start]" class="countdown_start" />
                                     </td>
                                 </tr>                                  
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][countdown_details]"><?php _e('Countdown (remaining time)', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][countdown_details]"><?php _e('カウントダウン（残り時間）', $this->plugin_slug); ?></label></th>
                                     <td class="countdown_details">	
-                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['days'])); ?>" name="options[modules][countdown_details][days]" /> <?php _e('Days', $this->plugin_slug); ?>
-                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['hours'])); ?>" name="options[modules][countdown_details][hours]" class="margin_left"/> <?php _e('Hours', $this->plugin_slug); ?>
-                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['minutes'])); ?>" name="options[modules][countdown_details][minutes]" class="margin_left" /> <?php _e('Minutes', $this->plugin_slug); ?>
+                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['days'])); ?>" name="options[modules][countdown_details][days]" /> <?php _e('日', $this->plugin_slug); ?>
+                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['hours'])); ?>" name="options[modules][countdown_details][hours]" class="margin_left"/> <?php _e('時間', $this->plugin_slug); ?>
+                                        <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_details']['minutes'])); ?>" name="options[modules][countdown_details][minutes]" class="margin_left" /> <?php _e('分', $this->plugin_slug); ?>
                                     </td>
                                 </tr>     
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][countdown_color]"><?php _e('Color', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][countdown_color]"><?php _e('色', $this->plugin_slug); ?></label></th>
                                     <td>
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_color'])); ?>" name="options[modules][countdown_color]" data-default-color="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_color'])); ?>" class="color_picker_trigger"/>
                                     </td>
@@ -267,38 +267,38 @@
                             </tbody>
                         </table>
 
-                        <h3>&raquo; <?php _e('Subscribe', $this->plugin_slug); ?></h3>
+                        <h3>&raquo; <?php _e('購読', $this->plugin_slug); ?></h3>
 
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][subscribe_status]"><?php _e('Show subscribe?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][subscribe_status]"><?php _e('購読を表示しますか？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][subscribe_status]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['subscribe_status'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['subscribe_status'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['subscribe_status'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['subscribe_status'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>   
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][subscribe_text]"><?php _e('Text', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][subscribe_text]"><?php _e('テキスト', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['subscribe_text'])); ?>" name="options[modules][subscribe_text]" />
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['subscribe_text_color'])); ?>" name="options[modules][subscribe_text_color]" data-default-color="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['subscribe_text_color'])); ?>" class="color_picker_trigger"/>
                                     </td>
                                 </tr> 
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][stats]"><?php _e('Stats', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][stats]"><?php _e('統計', $this->plugin_slug); ?></label></th>
                                     <td id="subscribers_wrap">	
                                         <?php
                                         $subscribers_no = wpmm_count_where('wpmm_subscribers', 'id_subscriber');
-                                        echo sprintf(__('You have %d subscriber(s)', $this->plugin_slug), $subscribers_no);
+                                        echo sprintf(__('%d個の加入者があります', $this->plugin_slug), $subscribers_no);
 
                                         if ($subscribers_no > 0) {
                                             ?>
                                             <br />
-                                            <a class="button button-primary" id="subscribers-export" href="javascript:void(0);"><?php _e('Export as CSV', $this->plugin_slug); ?></a>
-                                            <a class="button button-secondary" id="subscribers-empty-list" href="javascript:void(0);"><?php _e('Empty subscribers list', $this->plugin_slug); ?></a>
+                                            <a class="button button-primary" id="subscribers-export" href="javascript:void(0);"><?php _e('CSVとしてエクスポート', $this->plugin_slug); ?></a>
+                                            <a class="button button-secondary" id="subscribers-empty-list" href="javascript:void(0);"><?php _e('空の加入者リスト', $this->plugin_slug); ?></a>
                                         <?php } ?>
                                     </td>
                                 </tr>                                
@@ -310,20 +310,20 @@
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][social_status]"><?php _e('Show social networks?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][social_status]"><?php _e('ソーシャルネットワークを表示しますか？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][social_status]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['social_status'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['social_status'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['social_status'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['social_status'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][social_target]"><?php _e('Links target?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][social_target]"><?php _e('リンク先は？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][social_target]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['social_target'], 1); ?>><?php _e('New page', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['social_target'], 0); ?>><?php _e('Same page', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['social_target'], 1); ?>><?php _e('新しいページ', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['social_target'], 0); ?>><?php _e('同じページ', $this->plugin_slug); ?></option>
                                         </select>
                                         <p class="description"><?php _e('Choose how the links will open.', $this->plugin_slug); ?></p>
                                     </td>
@@ -378,25 +378,25 @@
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][contact_status]"><?php _e('Show contact?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][contact_status]"><?php _e('連絡先を表示しますか？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][contact_status]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['contact_status'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['contact_status'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['contact_status'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['contact_status'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][contact_email]"><?php _e('Email address', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][contact_email]"><?php _e('Eメールアドレス', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['contact_email'])); ?>" name="options[modules][contact_email]" />
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][contact_effects]"><?php _e('Effects', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][contact_effects]"><?php _e('エフェクト', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][contact_effects]">
-                                            <option value="move_top|move_bottom" <?php selected($this->plugin_settings['modules']['contact_effects'], 'move_top|move_bottom'); ?>><?php _e('Move top - Move bottom', $this->plugin_slug); ?></option>
+                                            <option value="move_top|move_bottom" <?php selected($this->plugin_settings['modules']['contact_effects'], 'move_top|move_bottom'); ?>><?php _e('上に移動 - 下に移動', $this->plugin_slug); ?></option>
                                             <option value="zoom|zoomed" <?php selected($this->plugin_settings['modules']['contact_effects'], 'zoom|zoomed'); ?>><?php _e('Zoom - Zoomed', $this->plugin_slug); ?></option>
                                             <option value="fold|unfold" <?php selected($this->plugin_settings['modules']['contact_effects'], 'fold|unfold'); ?>><?php _e('Fold - Unfold', $this->plugin_slug); ?></option>
                                         </select>
