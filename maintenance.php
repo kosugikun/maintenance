@@ -5,7 +5,7 @@
  *
  * Plugin Name: Maintenance
  * Plugin URI: https://mcpenano.net
- * Description: You can easily let me know that your page is under maintenance.
+ * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
  * Version: 0.3.0-beta.3
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
