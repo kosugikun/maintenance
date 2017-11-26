@@ -10,9 +10,9 @@
     <div class="wpmm-wrapper">
         <div id="content" class="wrapper-cell">
             <div class="nav-tab-wrapper">
-                <a class="nav-tab nav-tab-active" href="#general"><?php _e('General', $this->plugin_slug); ?></a>
-                <a class="nav-tab" href="#design"><?php _e('Design', $this->plugin_slug); ?></a>
-                <a class="nav-tab" href="#modules"><?php _e('Modules', $this->plugin_slug); ?></a>
+                <a class="nav-tab nav-tab-active" href="#general"><?php _e('一般', $this->plugin_slug); ?></a>
+                <a class="nav-tab" href="#design"><?php _e('設計', $this->plugin_slug); ?></a>
+                <a class="nav-tab" href="#modules"><?php _e('モジュール', $this->plugin_slug); ?></a>
             </div>
 
             <div class="tabs-content">
@@ -21,10 +21,10 @@
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][status]"><?php _e('Status', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][status]"><?php _e('メンテナンス', $this->plugin_slug); ?></label></th>
                                     <td>	
-                                        <label><input type="radio" value="1" name="options[general][status]" <?php checked($this->plugin_settings['general']['status'], 1); ?>> <?php _e('Activated', $this->plugin_slug); ?></label> <br />
-                                        <label><input type="radio" value="0" name="options[general][status]" <?php checked($this->plugin_settings['general']['status'], 0); ?>> <?php _e('Deactivated', $this->plugin_slug); ?></label> 
+                                        <label><input type="radio" value="1" name="options[general][status]" <?php checked($this->plugin_settings['general']['status'], 1); ?>> <?php _e('有効化', $this->plugin_slug); ?></label> <br />
+                                        <label><input type="radio" value="0" name="options[general][status]" <?php checked($this->plugin_settings['general']['status'], 0); ?>> <?php _e('無効化', $this->plugin_slug); ?></label> 
                                     </td>
                                 </tr>
                                 <tr valign="top">
