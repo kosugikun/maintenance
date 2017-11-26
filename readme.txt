@@ -31,7 +31,12 @@ You can easily let me know that your page is under maintenance.
 
 == Changelog ==
 
-= 0.1 =
+= 0.2.0
+アップデート機能の実装
+バク修正
+
+
+= 0.1.0 =
 ベータリリースしました。
 
 
