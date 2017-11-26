@@ -40,7 +40,7 @@
                                 <tr valign="top">
                                     <th scope="row"><label for="options[general][backend_role][]"><?php _e('バックエンドの役割 ', $this->plugin_slug); ?></label></th>
                                     <td>	
-                                        <select name="options[general][backend_role][]" multiple="multiple" class="chosen-select" data-placeholder="<?php _e('Select role(s)', $this->plugin_slug); ?>">
+                                        <select name="options[general][backend_role][]" multiple="multiple" class="chosen-select" data-placeholder="<?php _e('役割を選択する', $this->plugin_slug); ?>">
                                             <?php
                                             foreach ($wp_roles->roles as $role => $details) {
                                                 if ($role == 'administrator') {
