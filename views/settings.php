@@ -325,7 +325,7 @@
                                             <option value="1" <?php selected($this->plugin_settings['modules']['social_target'], 1); ?>><?php _e('新しいページ', $this->plugin_slug); ?></option>
                                             <option value="0" <?php selected($this->plugin_settings['modules']['social_target'], 0); ?>><?php _e('同じページ', $this->plugin_slug); ?></option>
                                         </select>
-                                        <p class="description"><?php _e('Choose how the links will open.', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('リンクの開き方を選択します。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>                                
                                 <tr valign="top">
@@ -397,8 +397,8 @@
                                     <td>	
                                         <select name="options[modules][contact_effects]">
                                             <option value="move_top|move_bottom" <?php selected($this->plugin_settings['modules']['contact_effects'], 'move_top|move_bottom'); ?>><?php _e('上に移動 - 下に移動', $this->plugin_slug); ?></option>
-                                            <option value="zoom|zoomed" <?php selected($this->plugin_settings['modules']['contact_effects'], 'zoom|zoomed'); ?>><?php _e('Zoom - Zoomed', $this->plugin_slug); ?></option>
-                                            <option value="fold|unfold" <?php selected($this->plugin_settings['modules']['contact_effects'], 'fold|unfold'); ?>><?php _e('Fold - Unfold', $this->plugin_slug); ?></option>
+                                            <option value="zoom|zoomed" <?php selected($this->plugin_settings['modules']['contact_effects'], 'zoom|zoomed'); ?>><?php _e('ズーム - ズーム', $this->plugin_slug); ?></option>
+                                            <option value="fold|unfold" <?php selected($this->plugin_settings['modules']['contact_effects'], 'fold|unfold'); ?>><?php _e('折りたたみ - 展開', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>                                
@@ -410,19 +410,19 @@
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][ga_status]"><?php _e('Use Google Analytics?', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][ga_status]"><?php _e('Google Analyticsを使用しますか？', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <select name="options[modules][ga_status]">
-                                            <option value="1" <?php selected($this->plugin_settings['modules']['ga_status'], 1); ?>><?php _e('Yes', $this->plugin_slug); ?></option>
-                                            <option value="0" <?php selected($this->plugin_settings['modules']['ga_status'], 0); ?>><?php _e('No', $this->plugin_slug); ?></option>
+                                            <option value="1" <?php selected($this->plugin_settings['modules']['ga_status'], 1); ?>><?php _e('はい', $this->plugin_slug); ?></option>
+                                            <option value="0" <?php selected($this->plugin_settings['modules']['ga_status'], 0); ?>><?php _e('いいえ', $this->plugin_slug); ?></option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][ga_code]"><?php _e('Tracking code', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][ga_code]"><?php _e('トラッキングコード', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['ga_code'])); ?>" name="options[modules][ga_code]" />
-                                        <p class="description"><?php _e('Allowed formats: UA-XXXXXXXX, UA-XXXXXXXX-XXXX. Eg: UA-12345678-1 is valid', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('使用できるフォーマット： UA-XXXXXXXX, UA-XXXXXXXX-XXXX. 例：UA-12345678-1などが有効です', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>                                
                             </tbody>
@@ -430,8 +430,8 @@
 
                         <?php wp_nonce_field('tab-modules'); ?>
                         <input type="hidden" value="modules" name="tab" />
-                        <input type="submit" value="<?php _e('Save settings', $this->plugin_slug); ?>" class="button button-primary" name="submit">
-                        <input type="button" value="<?php _e('Reset settings', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="modules" name="submit">
+                        <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit">
+                        <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="modules" name="submit">
                     </form>
                 </div>
             </div>
