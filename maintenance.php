@@ -9,7 +9,7 @@
  * Version: 0.3.2
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
- * Twitter: kosugi_kin
+ * Twitter: kosugi_kun
  * GitHub Plugin URI: https://github.com/kosugikun/maintenance
  * GitHub Branch: master
  * Text Domain: maintenance-kosugikun
