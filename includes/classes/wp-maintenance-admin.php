@@ -433,7 +433,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
         public function add_settings_link($links) {
             return array_merge(
                     array(
-                'wpmm_settings' => '<a href="' . admin_url('options-general.php?page=' . $this->plugin_slug) . '">' . __('Settings', $this->plugin_slug) . '</a>'
+                'wpmm_settings' => '<a href="' . admin_url('options-general.php?page=' . $this->plugin_slug) . '">' . __('設定', $this->plugin_slug) . '</a>'
                     ), $links
             );
         }
@@ -452,7 +452,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
                 if ($this->plugin_settings['general']['status'] == 1 && $this->plugin_settings['general']['notice'] == 1) {
                     $notices['is_activated'] = array(
                         'class' => 'error',
-                        'msg' => sprintf(__('The Maintenance Mode is <strong>active</strong>. Please don\'t forget to <a href="%s">deactivate</a> as soon as you are done.', $this->plugin_slug), admin_url('options-general.php?page=' . $this->plugin_slug))
+                        'msg' => sprintf(__('メンテナンスモードは<strong>アクティブ</strong>です。完了したらすぐに<a href="%s">無効にする</a>ことを忘れないようにしてください。', $this->plugin_slug), admin_url('options-general.php?page=' . $this->plugin_slug))
                     );
                 }
 
@@ -489,7 +489,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
         public function dismiss_notices() {
             try {
                 if (empty($_POST['notice_key'])) {
-                    throw new Exception(__('Notice key cannot be empty.', $this->plugin_slug));
+                    throw new Exception(__('通知キーは空にすることはできません。', $this->plugin_slug));
                 }
 
                 // save new notice key
