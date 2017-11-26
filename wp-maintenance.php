@@ -10,7 +10,7 @@
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kun
- * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance
+ * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance/
  * GitHub Branch: master
  * Text Domain: maintenance-kosugikun
  * License: GPL-2.0+
