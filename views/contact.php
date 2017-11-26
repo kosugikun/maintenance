@@ -31,7 +31,7 @@
                         </tr>
                         <tr>
                             <td style="color:#747e7e;font-family:Lato, Helvetica, Arial, sans-serif;text-align:center;font-size:18px;font-weight:normal;">
-								<?php printf(__('You have been contacted via %s.', $this->plugin_slug), get_bloginfo('name')); ?>
+								<?php printf(__('あなたは%s経由で連絡を受けています。', $this->plugin_slug), get_bloginfo('name')); ?>
                             </td>
                         </tr>
                         <tr>
