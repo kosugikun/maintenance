@@ -6,7 +6,7 @@
  * Plugin Name: WP Maintenance
  * Plugin URI: https://mcpenano.net
  * Description: You can easily let me know that your page is under maintenance.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kin
