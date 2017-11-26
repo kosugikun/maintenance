@@ -3,7 +3,7 @@
 /**
  * Maintenance
  *
- * Plugin Name: Maintenance
+ * Plugin Name: WP Maintenance
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
  * Version: 0.3.2
