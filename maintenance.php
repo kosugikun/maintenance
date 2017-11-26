@@ -18,7 +18,7 @@
  */
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/kosugikun/maintenance/',
+	'https://github.com/kosugikun/wp-maintenance/',
 	__FILE__,
 	'maintenance'
 );
