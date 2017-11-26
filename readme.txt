@@ -31,7 +31,12 @@ You can easily let me know that your page is under maintenance.
 
 == Changelog ==
 
-= 0.2.0
+= 0.4.0=
+バグ修正
+ロゴ変更
+
+
+= 0.2.0 =
 アップデート機能の実装
 バク修正
 
