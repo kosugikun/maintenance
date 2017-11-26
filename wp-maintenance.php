@@ -21,7 +21,7 @@ require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/maintenance/',
 	__FILE__,
-	'maintenance-master'
+	'wp-maintenance'
 );
 //Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
