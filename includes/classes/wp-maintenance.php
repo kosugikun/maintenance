@@ -727,7 +727,7 @@ if (!class_exists('WP_Maintenance')) {
 
 				// checks
 				if (empty($_POST['email']) || !is_email($_POST['email'])) {
-					throw new Exception(__('Please enter a valid email address.', $this->plugin_slug));
+					throw new Exception(__('有効なメールアドレスを入力してください。', $this->plugin_slug));
 				}
 
 				// save
@@ -739,7 +739,7 @@ if (!class_exists('WP_Maintenance')) {
 							), array('%s', '%s'));
 				}
 
-				wp_send_json_success(__('You successfully subscribed. Thanks!', $this->plugin_slug));
+				wp_send_json_success(__('あなたは正常に購読しました。ありがとう！', $this->plugin_slug));
 			} catch (Exception $ex) {
 				wp_send_json_error($ex->getMessage());
 			}
@@ -757,11 +757,11 @@ if (!class_exists('WP_Maintenance')) {
 
 				// checks
 				if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['content'])) {
-					throw new Exception(__('All fields required.', $this->plugin_slug));
+					throw new Exception(__('すべてのフィールドが必要。', $this->plugin_slug));
 				}
 
 				if (!is_email($_POST['email'])) {
-					throw new Exception(__('Please enter a valid email address.', $this->plugin_slug));
+					throw new Exception(__('有効なメールアドレスを入力してください。', $this->plugin_slug));
 				}
 				
 				// if you add new fields to the contact form... you will definitely need to validate their values
@@ -783,7 +783,7 @@ if (!class_exists('WP_Maintenance')) {
 
 				// send email
 				@wp_mail($send_to, $subject, $message, $headers);
-				wp_send_json_success(__('Your email was sent to the website administrator. Thanks!', $this->plugin_slug));
+				wp_send_json_success(__('あなたの電子メールは、Webサイト管理者に送信されました。ありがとう！', $this->plugin_slug));
 			} catch (Exception $ex) {
 				wp_send_json_error($ex->getMessage());
 			}
