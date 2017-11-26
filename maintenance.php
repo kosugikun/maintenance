@@ -6,7 +6,7 @@
  * Plugin Name: Maintenance
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
- * Version: 0.3.0-beta.3
+ * Version: 0.3.0-beta.5
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kin
@@ -15,7 +15,6 @@
  * Text Domain: maintenance
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path: /languages
  */
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
