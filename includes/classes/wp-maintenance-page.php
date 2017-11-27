@@ -1,12 +1,12 @@
 <?php
 
-if (!class_exists('WP_Maintenance')) {
+if (!class_exists('WP_Maintenance_page')) {
 
-	class WP_Maintenance {
+	class WP_Maintenance_page {
 
 		const VERSION = '0.1.0';
 
-		protected $plugin_slug = 'wp-maintenance';
+		protected $plugin_slug = 'wp-maintenance-page';
 		protected $plugin_settings;
 		protected $plugin_basename;
 		protected static $instance = null;
@@ -19,7 +19,7 @@ if (!class_exists('WP_Maintenance')) {
 			add_action('init', array($this, 'load_plugin_textdomain'));
 
 			// Add shortcodes
-			add_action('init', array('WP_Maintenance_Shortcodes', 'init'));
+			add_action('init', array('WP_Maintenance_page_Shortcodes', 'init'));
 
 			// Activate plugin when new blog is added
 			add_action('wpmu_new_blog', array($this, 'activate_new_site'));
@@ -168,8 +168,8 @@ if (!class_exists('WP_Maintenance')) {
 			}
 
 			// delete old options
-			delete_option('wp-maintenance');
-			delete_option('wp-maintenance-msqld');
+			delete_option('wp-maintenance-page');
+			delete_option('wp-maintenance-page-msqld');
 		}
 
 		/**
@@ -180,7 +180,7 @@ if (!class_exists('WP_Maintenance')) {
 		public function check_update() {
 			$version = get_option('wpmm_version', '0');
 
-			if (!version_compare($version, WP_Maintenance::VERSION, '=')) {
+			if (!version_compare($version, WP_Maintenance_page::VERSION, '=')) {
 				self::activate(is_multisite() && is_plugin_active_for_network($this->plugin_basename) ? true : false);
 			}
 		}
@@ -247,7 +247,7 @@ if (!class_exists('WP_Maintenance')) {
 
 			// get all options for different versions of the plugin
 			$v2_options = get_option('wpmm_settings');
-			$old_options = (is_multisite() && $network_wide) ? get_site_option('wp-maintenancee') : get_option('wp-maintenance');
+			$old_options = (is_multisite() && $network_wide) ? get_site_option('wp-maintenance-page') : get_option('wp-maintenance-page');
 			$default_options = self::get_instance()->default_settings();
 
 			/**
@@ -389,7 +389,7 @@ if (!class_exists('WP_Maintenance')) {
 			}
 
 			// set current version
-			update_option('wpmm_version', WP_Maintenance::VERSION);
+			update_option('wpmm_version', WP_Maintenance_page::VERSION);
 		}
 
 		/**
@@ -525,12 +525,12 @@ if (!class_exists('WP_Maintenance')) {
 				header("Retry-After: $backtime");
 
 				// load maintenance mode template
-				if (file_exists(get_stylesheet_directory() . '/wp-maintenance.php')) { // check child theme folder
-					include_once(get_stylesheet_directory() . '/wp-maintenance.php');
-				} else if (file_exists(get_template_directory() . "/wp-maintenance.php")) { // check theme folder	
-					include_once(get_template_directory() . '/wp-maintenance.php');
-				} else if (file_exists(WP_CONTENT_DIR . '/wp-maintenance.php')) { // check `wp-content` folder
-					include_once(WP_CONTENT_DIR . '/wp-maintenance.php');
+				if (file_exists(get_stylesheet_directory() . '/wp-maintenance-page.php')) { // check child theme folder
+					include_once(get_stylesheet_directory() . '/wp-maintenance-page.php');
+				} else if (file_exists(get_template_directory() . "/wp-maintenance-page.php")) { // check theme folder	
+					include_once(get_template_directory() . '/wp-maintenance-page.php');
+				} else if (file_exists(WP_CONTENT_DIR . '/wp-maintenance-page.php')) { // check `wp-content` folder
+					include_once(WP_CONTENT_DIR . '/wp-maintenance-page.php');
 				} else { // load from plugin `views` folder
 					include_once(WPMM_VIEWS_PATH . 'maintenance.php');
 				}
