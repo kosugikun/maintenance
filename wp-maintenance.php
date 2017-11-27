@@ -3,7 +3,7 @@
 /**
  * Maintenance
  *
- * Plugin Name: WP Maintenance
+ * Plugin Name: WP Maintenance page
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
  * Version: 0.4.3
@@ -12,7 +12,7 @@
  * Twitter: kosugi_kun
  * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance/
  * GitHub Branch: master
- * Text Domain: maintenance-kosugikun
+ * Text Domain: wp-maintenance-page
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -20,7 +20,7 @@ require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/wp-maintenance/',
 	__FILE__,
-	'maintenance'
+	'wp-maintenance-page'
 );
 //Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
@@ -65,17 +65,17 @@ if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
 /**
  * FRONTEND
  */
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-shortcodes.php');
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance.php');
-register_activation_hook(__FILE__, array('WP_Maintenance', 'activate'));
-register_deactivation_hook(__FILE__, array('WP_Maintenance', 'deactivate'));
+require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page-shortcodes.php');
+require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page.php');
+register_activation_hook(__FILE__, array('WP_Maintenance_page', 'activate'));
+register_deactivation_hook(__FILE__, array('WP_Maintenance_page', 'deactivate'));
 
-add_action('plugins_loaded', array('WP_Maintenance', 'get_instance'));
+add_action('plugins_loaded', array('WP_Maintenance_page', 'get_instance'));
 
 /**
  * DASHBOARD
  */
 if (is_admin()) {
-    require_once(WPMM_CLASSES_PATH . 'wp-maintenance-admin.php');
-    add_action('plugins_loaded', array('WP_Maintenance_Admin', 'get_instance'));
+    require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page-admin.php');
+    add_action('plugins_loaded', array('WP_Maintenance_page_Admin', 'get_instance'));
 }
