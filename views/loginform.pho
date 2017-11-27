@@ -5,5 +5,5 @@
     <?php if (!empty($redirect)) { ?>
         <input type="hidden" name="redirect_to" value="<?php echo $redirect; ?>" />
     <?php } ?>
-    <input type="submit" value="<?php _e('Login', 'wp-maintenance-mode'); ?>" />
+    <input type="submit" value="<?php _e('Login', 'wp-maintenance-page'); ?>" />
 </form>
