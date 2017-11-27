@@ -57,7 +57,7 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 						'Throttling',
 						sprintf(
 							'有効になります。更新プログラムが既に利用可能な場合は、%2$d時間ごとではなく、%1$d時間ごとに更新を確認しください。', 
-							$cheduler->throttledCheckPeriod,
+							$scheduler->throttledCheckPeriod,
 							$scheduler->checkPeriod
 						)
 					);
