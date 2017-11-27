@@ -35,20 +35,20 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 		}
 
 		private function displayConfiguration() {
-			echo '<h3>Configuration</h3>';
+			echo '<h3>構成</h3>';
 			echo '<table class="puc-debug-data">';
 			$this->displayConfigHeader();
-			$this->row('Slug', htmlentities($this->updateChecker->slug));
-			$this->row('DB option', htmlentities($this->updateChecker->optionName));
+			$this->row('スラグ', htmlentities($this->updateChecker->slug));
+			$this->row('DBオプション', htmlentities($this->updateChecker->optionName));
 
 			$requestInfoButton = $this->getMetadataButton();
-			$this->row('Metadata URL', htmlentities($this->updateChecker->metadataUrl) . ' ' . $requestInfoButton . $this->responseBox);
+			$this->row('メタデータURL', htmlentities($this->updateChecker->metadataUrl) . ' ' . $requestInfoButton . $this->responseBox);
 
 			$scheduler = $this->updateChecker->scheduler;
 			if ( $scheduler->checkPeriod > 0 ) {
-				$this->row('Automatic checks', 'Every ' . $scheduler->checkPeriod . ' hours');
+				$this->row('自動チェック', 'Every ' . $scheduler->checkPeriod . ' hours');
 			} else {
-				$this->row('Automatic checks', 'Disabled');
+				$this->row('自動チェック', 'Disabled');
 			}
 
 			if ( isset($scheduler->throttleRedundantChecks) ) {
@@ -56,8 +56,7 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 					$this->row(
 						'Throttling',
 						sprintf(
-							'Enabled. If an update is already available, check for updates every %1$d hours instead of every %2$d hours.',
-							$scheduler->throttledCheckPeriod,
+							'有効になります。更新プログラムが既に利用可能な場合は、%2$d時間ごとではなく、％1 $ d時間ごとに更新を確認してください。', scheduler->throttledCheckPeriod,
 							$scheduler->checkPeriod
 						)
 					);
@@ -80,13 +79,13 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 		}
 
 		private function displayStatus() {
-			echo '<h3>Status</h3>';
+			echo '<h3>状態</h3>';
 			echo '<table class="puc-debug-data">';
 			$state = $this->updateChecker->getUpdateState();
 			$checkNowButton = '';
 			if ( function_exists('get_submit_button')  ) {
 				$checkNowButton = get_submit_button(
-					'Check Now',
+					'今すぐチェック',
 					'secondary',
 					'puc-check-now-button',
 					false,
@@ -95,26 +94,26 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 			}
 
 			if ( $state->getLastCheck() > 0 ) {
-				$this->row('Last check', $this->formatTimeWithDelta($state->getLastCheck()) . ' ' . $checkNowButton . $this->responseBox);
+				$this->row('最後のチェック', $this->formatTimeWithDelta($state->getLastCheck()) . ' ' . $checkNowButton . $this->responseBox);
 			} else {
-				$this->row('Last check', 'Never');
+				$this->row('最後のチェック', 'Never');
 			}
 
 			$nextCheck = wp_next_scheduled($this->updateChecker->scheduler->getCronHookName());
-			$this->row('Next automatic check', $this->formatTimeWithDelta($nextCheck));
+			$this->row('次の自動チェック', $this->formatTimeWithDelta($nextCheck));
 
 			if ( $state->getCheckedVersion() !== '' ) {
-				$this->row('Checked version', htmlentities($state->getCheckedVersion()));
-				$this->row('Cached update', $state->getUpdate());
+				$this->row('バージョンを確認する', htmlentities($state->getCheckedVersion()));
+				$this->row('キャッシュされた更新', $state->getUpdate());
 			}
-			$this->row('Update checker class', htmlentities(get_class($this->updateChecker)));
+			$this->row('チェッカークラスを更新する', htmlentities(get_class($this->updateChecker)));
 			echo '</table>';
 		}
 
 		private function displayCurrentUpdate() {
 			$update = $this->updateChecker->getUpdate();
 			if ( $update !== null ) {
-				echo '<h3>An Update Is Available</h3>';
+				echo '<h3>アップデートが利用可能です</h3>';
 				echo '<table class="puc-debug-data">';
 				$fields = $this->getUpdateFields();
 				foreach($fields as $field) {
@@ -124,7 +123,7 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 				}
 				echo '</table>';
 			} else {
-				echo '<h3>No updates currently available</h3>';
+				echo '<h3>現在利用可能なアップデートはありません</h3>';
 			}
 		}
 
