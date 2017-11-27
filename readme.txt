@@ -29,6 +29,9 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 0.5.3 =
+バグ修正
+
 
 = 0.5.0 =
 プラグインの変数をリニューアル<br>
