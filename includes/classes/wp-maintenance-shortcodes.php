@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists('WP_Maintenance_page_Shortcodes')) {
-    class WP_Maintenance_page_Shortcodes {
+if (!class_exists('WP_Maintenance_Shortcodes')) {
+    class WP_Maintenance_Shortcodes {
 
         /**
          * Add shortcodes
@@ -45,16 +45,16 @@ if (!class_exists('WP_Maintenance_page_Shortcodes')) {
          * @return string
          */
         public static function loginform($atts) {
-            return self::shortcode_wrapper(array('WP_Maintenance_page_Shortcode_Login', 'display'), $atts);
+            return self::shortcode_wrapper(array('WP_Maintenance_Shortcode_Login', 'display'), $atts);
         }
 
     }
 
 }
 
-if (!class_exists('WP_Maintenance_page_Shortcode_Login')) {
+if (!class_exists('WP_Maintenance_Shortcode_Login')) {
 
-    class WP_Maintenance_page_Shortcode_Login {
+    class WP_Maintenance_Shortcode_Login {
 
         public function __construct() { }
 
