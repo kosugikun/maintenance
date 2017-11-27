@@ -12,24 +12,29 @@ Here is a short description of the plugin.  This should be no more than 150 char
 
 == Description ==
 
-You can easily let me know that your page is under maintenance.
+あなたのページがメンテナンス中であることを簡単に教えてください。
 
 == Installation ==
 
 このセクションでは、プラグインをインストールして動作させる方法について説明します。<br>
 
 
-1.プラグインファイルを `/ wp-content / plugins / plugin-name`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。<br>
+1.プラグインファイルを `/wp-content/plugins/
+WP-Maintenance-page`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。<br>
 1. WordPressの「プラグイン」画面からプラグインを有効にする<br>
 1.設定 - >プラグイン名画面を使用してプラグインを設定します<br>
 1.（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
-
-== Frequently Asked Questions ==
 
 
 
 
 == Changelog ==
+
+= 0.5.0 =
+プラグインの変数をリニューアル<br>
+プラグインの名前を変更<br>
+管理ページのサイドバーを廃止
+
 
 = 0.4.0 =
 バグ修正
