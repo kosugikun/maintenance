@@ -19,7 +19,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			add_action('init', array($this, 'load_plugin_textdomain'));
 
 			// Add shortcodes
-			add_action('init', array('WP_Maintenance_page_Shortcodes', 'init'));
+			add_action('init', array('WP_Maintenance_Shortcodes', 'init'));
 
 			// Activate plugin when new blog is added
 			add_action('wpmu_new_blog', array($this, 'activate_new_site'));
