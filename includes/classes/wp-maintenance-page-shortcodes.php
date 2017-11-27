@@ -1,7 +1,7 @@
 <?php
 
 if (!class_exists('WP_Maintenance_page_Shortcodes')) {
-    class WP_Maintenance_Shortcodes {
+    class WP_Maintenance_page_Shortcodes {
 
         /**
          * Add shortcodes
