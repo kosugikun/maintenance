@@ -1,8 +1,8 @@
 <?php
 
-if (!class_exists('WP_Maintenance_Admin')) {
+if (!class_exists('WP_Maintenance_page_Admin')) {
 
-    class WP_Maintenance_Admin {
+    class WP_Maintenance_page_Admin {
 
         protected static $instance = null;
         protected $plugin_slug;
@@ -13,7 +13,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
         private $dismissed_notices_key = 'wpmm_dismissed_notices';
 
         private function __construct() {
-            $plugin = WP_Maintenance::get_instance();
+            $plugin = WP_Maintenance_page::get_instance();
             $this->plugin_slug = $plugin->get_plugin_slug();
             $this->plugin_settings = $plugin->get_plugin_settings();
             $this->plugin_default_settings = $plugin->default_settings();
@@ -71,10 +71,10 @@ if (!class_exists('WP_Maintenance_Admin')) {
                 $wp_scripts = wp_scripts();
                 $ui = $wp_scripts->query('jquery-ui-core');
 
-                wp_enqueue_style($this->plugin_slug . '-admin-jquery-ui-styles', '//ajax.googleapis.com/ajax/libs/jqueryui/' . (!empty($ui->ver) ? $ui->ver : '1.11.4') . '/themes/smoothness/jquery-ui' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance::VERSION);
-                wp_enqueue_style($this->plugin_slug . '-admin-chosen', WPMM_CSS_URL . 'chosen' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance::VERSION);
-                wp_enqueue_style($this->plugin_slug . '-admin-timepicker-addon-script', WPMM_CSS_URL . 'jquery-ui-timepicker-addon' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance::VERSION);
-                wp_enqueue_style($this->plugin_slug . '-admin-styles', WPMM_CSS_URL . 'style-admin' . WPMM_ASSETS_SUFFIX . '.css', array('wp-color-picker'), WP_Maintenance::VERSION);
+                wp_enqueue_style($this->plugin_slug . '-admin-jquery-ui-styles', '//ajax.googleapis.com/ajax/libs/jqueryui/' . (!empty($ui->ver) ? $ui->ver : '1.11.4') . '/themes/smoothness/jquery-ui' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance_page::VERSION);
+                wp_enqueue_style($this->plugin_slug . '-admin-chosen', WPMM_CSS_URL . 'chosen' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance_page::VERSION);
+                wp_enqueue_style($this->plugin_slug . '-admin-timepicker-addon-script', WPMM_CSS_URL . 'jquery-ui-timepicker-addon' . WPMM_ASSETS_SUFFIX . '.css', array(), WP_Maintenance_page::VERSION);
+                wp_enqueue_style($this->plugin_slug . '-admin-styles', WPMM_CSS_URL . 'style-admin' . WPMM_ASSETS_SUFFIX . '.css', array('wp-color-picker'), WP_Maintenance_page::VERSION);
             }
         }
 
@@ -92,9 +92,9 @@ if (!class_exists('WP_Maintenance_Admin')) {
             $screen = get_current_screen();
             if ($this->plugin_screen_hook_suffix == $screen->id) {
                 wp_enqueue_media();
-                wp_enqueue_script($this->plugin_slug . '-admin-timepicker-addon-script', WPMM_JS_URL . 'jquery-ui-timepicker-addon' . WPMM_ASSETS_SUFFIX . '.js', array('jquery', 'jquery-ui-datepicker'), WP_Maintenance::VERSION);
-                wp_enqueue_script($this->plugin_slug . '-admin-script', WPMM_JS_URL . 'scripts-admin' . WPMM_ASSETS_SUFFIX . '.js', array('jquery', 'wp-color-picker'), WP_Maintenance::VERSION);
-                wp_enqueue_script($this->plugin_slug . '-admin-chosen', WPMM_JS_URL . 'chosen.jquery' . WPMM_ASSETS_SUFFIX . '.js', array(), WP_Maintenance::VERSION);
+                wp_enqueue_script($this->plugin_slug . '-admin-timepicker-addon-script', WPMM_JS_URL . 'jquery-ui-timepicker-addon' . WPMM_ASSETS_SUFFIX . '.js', array('jquery', 'jquery-ui-datepicker'), WP_Maintenance_page::VERSION);
+                wp_enqueue_script($this->plugin_slug . '-admin-script', WPMM_JS_URL . 'scripts-admin' . WPMM_ASSETS_SUFFIX . '.js', array('jquery', 'wp-color-picker'), WP_Maintenance_page::VERSION);
+                wp_enqueue_script($this->plugin_slug . '-admin-chosen', WPMM_JS_URL . 'chosen.jquery' . WPMM_ASSETS_SUFFIX . '.js', array(), WP_Maintenance_page::VERSION);
                 wp_localize_script($this->plugin_slug . '-admin-script', 'wpmm_vars', array(
                     'ajax_url' => admin_url('admin-ajax.php'),
                     'plugin_url' => admin_url('options-general.php?page=' . $this->plugin_slug)
@@ -102,7 +102,7 @@ if (!class_exists('WP_Maintenance_Admin')) {
             }
 
             // For global actions like dismiss notices
-            wp_enqueue_script($this->plugin_slug . '-admin-global', WPMM_JS_URL . 'scripts-admin-global' . WPMM_ASSETS_SUFFIX . '.js', array('jquery'), WP_Maintenance::VERSION);
+            wp_enqueue_script($this->plugin_slug . '-admin-global', WPMM_JS_URL . 'scripts-admin-global' . WPMM_ASSETS_SUFFIX . '.js', array('jquery'), WP_Maintenance_page::VERSION);
         }
 
         /**
