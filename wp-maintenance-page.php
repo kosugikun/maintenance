@@ -65,7 +65,7 @@ if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
 /**
  * FRONTEND
  */
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page-shortcodes.php');
+require_once(WPMM_CLASSES_PATH . 'wp-maintenance-shortcodes.php');
 require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page.php');
 register_activation_hook(__FILE__, array('WP_Maintenance_page', 'activate'));
 register_deactivation_hook(__FILE__, array('WP_Maintenance_page', 'deactivate'));
