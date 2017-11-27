@@ -29,6 +29,10 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 0.5.4 =
+バク修正
+
+
 = 0.5.2 =
 バグ修正
 
