@@ -46,9 +46,9 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 
 			$scheduler = $this->updateChecker->scheduler;
 			if ( $scheduler->checkPeriod > 0 ) {
-				$this->row('自動チェック', 'Every ' . $scheduler->checkPeriod . ' hours');
+				$this->row('自動チェック', '毎 ' . $scheduler->checkPeriod . ' 時間');
 			} else {
-				$this->row('自動チェック', 'Disabled');
+				$this->row('自動チェック', '無効');
 			}
 
 			if ( isset($scheduler->throttleRedundantChecks) ) {
@@ -62,7 +62,7 @@ if ( !class_exists('Puc_v4p3_DebugBar_Panel', false) && class_exists('Debug_Bar_
 						)
 					);
 				} else {
-					$this->row('Throttling', 'Disabled');
+					$this->row('スロットリング', '無効');
 				}
 			}
 
