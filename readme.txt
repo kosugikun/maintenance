@@ -29,6 +29,10 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.0.0 =
+正式リリースをしました。<br>
+その他細かい修正
+
 = 0.5.5 =
 バク修正
 
