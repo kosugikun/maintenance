@@ -124,6 +124,14 @@
                         <input type="hidden" value="general" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit" />
                         <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
+						<table class="table3" border=1>
+ <th><h1>
+		プラグイン開発支援
+	</h1>
+	<p>
+		プラグイン開発の支援をお願いします。
+	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+</table>
                     </form>
                 </div>
                 <div id="tab-design" class="hidden">
@@ -146,7 +154,7 @@
                                     </td>
                                 </tr>      
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[design][text]"><?php _e('テキスト', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][text]"><?php _e('本文', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <?php
                                         wp_editor(stripslashes($this->plugin_settings['design']['text']), 'options_design_text', array(
@@ -181,7 +189,7 @@
                                     </td>
                                 </tr>     
                                 <tr valign="top" class="design_bg_types <?php echo $this->plugin_settings['design']['bg_type'] != 'color' ? 'hidden' : ''; ?>" id="show_color">
-                                    <th scope="row"><label for="options[design][bg_color]"><?php _e('Choose color', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[design][bg_color]"><?php _e('色を選択', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo $this->plugin_settings['design']['bg_color']; ?>" data-default-color="<?php echo $this->plugin_settings['design']['bg_color']; ?>" name="options[design][bg_color]" class="color_picker_trigger"/>
                                     </td>
@@ -190,7 +198,7 @@
                                     <th scope="row"><label for="options[design][bg_custom]"><?php _e('背景をアップロード', $this->plugin_slug); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['design']['bg_custom'])); ?>" name="options[design][bg_custom]" class="upload_image_url" />
-                                        <input type="button" value="Upload" class="button" id="upload_image_trigger" />
+                                        <input type="button" value="アップロード" class="button" id="upload_image_trigger" />
                                         <p class="description"><?php _e('背景には1920x1280ピクセルのサイズが必要です。', $this->plugin_slug); ?></p>
                                     </td>
                                 </tr>   
@@ -227,6 +235,14 @@
                         <input type="hidden" value="design" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit">
                         <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="design" name="submit">
+						<table class="table3" border=1>
+ <th><h1>
+		プラグイン開発支援
+	</h1>
+	<p>
+		プラグイン開発の支援をお願いします。
+	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+</table>
                     </form>
                 </div>
                 <div id="tab-modules" class="hidden">
@@ -305,7 +321,7 @@
                             </tbody>
                         </table>                        
 
-                        <h3>&raquo; <?php _e('Social Networks', $this->plugin_slug); ?></h3>
+                        <h3>&raquo; <?php _e('ソーシャルネットワーク', $this->plugin_slug); ?></h3>
 
                         <table class="form-table">
                             <tbody>
@@ -432,6 +448,22 @@
                         <input type="hidden" value="modules" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', $this->plugin_slug); ?>" class="button button-primary" name="submit">
                         <input type="button" value="<?php _e('設定をリセット', $this->plugin_slug); ?>" class="button button-secondary reset_settings" data-tab="modules" name="submit">
+						<style type="text/css">
+.table3 {
+  border-collapse: collapse;
+}
+.table3 th {
+  background-color: #cccccc;
+}
+</style>
+<table class="table3" border=1>
+ <th><h1>
+		プラグイン開発支援
+	</h1>
+	<p>
+		プラグイン開発の支援をお願いします。
+	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+</table>
                     </form>
                 </div>
             </div>
