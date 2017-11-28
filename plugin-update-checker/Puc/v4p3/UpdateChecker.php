@@ -719,8 +719,8 @@ if ( !class_exists('Puc_v4p3_UpdateChecker', false) ):
 					return new WP_Error(
 						'puc-incorrect-directory-structure',
 						sprintf(
-							'The directory structure of the update is incorrect. All files should be inside ' .
-							'a directory named <span class="code">%s</span>, not at the root of the ZIP archive.',
+							'更新プログラムのディレクトリ構造が正しくありません。すべてのファイルは内部にある必要があります' .
+							'ZIPアーカイブのルートではなく、<span class = "code">%s</span>という名前のディレクトリにコピーします。',
 							htmlentities($this->slug)
 						)
 					);
@@ -728,18 +728,18 @@ if ( !class_exists('Puc_v4p3_UpdateChecker', false) ):
 
 				/** @var WP_Upgrader_Skin $upgrader ->skin */
 				$upgrader->skin->feedback(sprintf(
-					'Renaming %s to %s&#8230;',
+					'%sから%sに名前を変更しています&#8230;',
 					'<span class="code">' . basename($source) . '</span>',
 					'<span class="code">' . $this->directoryName . '</span>'
 				));
 
 				if ( $wp_filesystem->move($source, $correctedSource, true) ) {
-					$upgrader->skin->feedback('Directory successfully renamed.');
+					$upgrader->skin->feedback('ディレクトリの名前が変更されました');
 					return $correctedSource;
 				} else {
 					return new WP_Error(
 						'puc-rename-failed',
-						'Unable to rename the update to match the existing directory.'
+						'既存のディレクトリに一致するように更新プログラムの名前を変更できません。'
 					);
 				}
 			}
