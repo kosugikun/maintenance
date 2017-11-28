@@ -1,6 +1,6 @@
 === Plugin Name ===
-Contributors: 倉崎鯖OP
-Donate link: https://mcpenano.com/
+Contributors: kosugikun, 
+Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 4.6
 Tested up to: 4.9
