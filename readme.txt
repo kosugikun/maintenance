@@ -3,7 +3,7 @@ Contributors: kosugikun,
 Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 4.6
-Tested up to: 4.9
+Tested up to: 4.9.1
 Stable tag: 4.9
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
