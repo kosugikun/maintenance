@@ -29,6 +29,9 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.0.2 =
+World Press 4.9.1をサポート対象にしました。
+
 = 1.0.0 =
 正式リリースをしました。<br>
 その他細かい修正
