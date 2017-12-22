@@ -29,6 +29,9 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.0.4 =
+細かな修正
+
 = 1.0.3 =
 細かな修正
 
