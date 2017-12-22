@@ -21,8 +21,8 @@ Here is a short description of the plugin.  This should be no more than 150 char
 
 1.プラグインファイルを `/wp-content/plugins/
 WP-Maintenance-page`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。<br>
-2. WordPressの「プラグイン」画面からプラグインを有効にする<br>
-3.設定 - >プラグイン名画面を使用してプラグインを設定します<br>
+2.WordPressの「プラグイン」画面からプラグインを有効にする<br>
+3.設定->プラグイン名画面を使用してプラグインを設定します<br>
 4.（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
 
 
