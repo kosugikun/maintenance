@@ -41,8 +41,8 @@
 				<?php if (!empty($this->plugin_settings['modules']['subscribe_text'])) { ?><h3><?php echo stripslashes($this->plugin_settings['modules']['subscribe_text']); ?></h3><?php } ?>
 				<div class="subscribe_wrapper" style="min-height: 100px;">
 					<form class="subscribe_form">
-						<input type="text" placeholder="<?php _e('your e-mail...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
-						<input type="submit" value="<?php _e('Subscribe', $this->plugin_slug); ?>" />
+						<input type="text" placeholder="<?php _e('あなたのEメール...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
+						<input type="submit" value="<?php _e('申し込む', $this->plugin_slug); ?>" />
 					</form>
 				</div>
 			<?php } ?>
@@ -85,29 +85,29 @@
 						<form class="contact_form">
 							<?php do_action('wpmm_contact_form_start'); ?>
 
-							<p class="col"><input type="text" placeholder="<?php _e('Name', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('This field is required.', $this->plugin_slug); ?>" name="name" class="name_input" /></p>
-							<p class="col last"><input type="text" placeholder="<?php _e('E-mail', $this->plugin_slug); ?>" data-rule-required="true" data-rule-email="true" data-msg-required="<?php esc_attr_e('This field is required.', $this->plugin_slug); ?>" data-msg-email="<?php esc_attr_e('Please enter a valid email address.', $this->plugin_slug); ?>" name="email" class="email_input" /></p>
+							<p class="col"><input type="text" placeholder="<?php _e('名前', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" name="name" class="name_input" /></p>
+							<p class="col last"><input type="text" placeholder="<?php _e('Eメール', $this->plugin_slug); ?>" data-rule-required="true" data-rule-email="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" data-msg-email="<?php esc_attr_e('Please enter a valid email address.', $this->plugin_slug); ?>" name="email" class="email_input" /></p>
 							<br clear="all" />
 
 							<?php do_action('wpmm_contact_form_before_message'); ?>
 
-							<p><textarea placeholder="<?php _e('Your message', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('This field is required.', $this->plugin_slug); ?>" name="content" class="content_textarea"></textarea></p>
+							<p><textarea placeholder="<?php _e('あなたのメッセージ', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" name="content" class="content_textarea"></textarea></p>
 
 							<?php do_action('wpmm_contact_form_after_message'); ?>
 
-							<p class="submit"><input type="submit" value="<?php _e('Send', $this->plugin_slug); ?>"></p>
+							<p class="submit"><input type="submit" value="<?php _e('送信', $this->plugin_slug); ?>"></p>
 
 							<?php do_action('wpmm_contact_form_end'); ?>
 						</form>
 					</div>
 				</div>                
 
-				<a class="contact_us" href="javascript:void(0);" data-open="<?php echo esc_attr($open); ?>" data-close="<?php echo esc_attr($close); ?>"><?php _e('Contact us', $this->plugin_slug); ?></a>
+				<a class="contact_us" href="javascript:void(0);" data-open="<?php echo esc_attr($open); ?>" data-close="<?php echo esc_attr($close); ?>"><?php _e('お問い合わせ', $this->plugin_slug); ?></a>
 			<?php } ?>
 
 			<?php if (!empty($this->plugin_settings['general']['admin_link']) && $this->plugin_settings['general']['admin_link'] == 1) { ?>
 				<div class="author_link">
-					<a href="<?php echo admin_url(); ?>"><?php _e('Dashboard', $this->plugin_slug); ?></a>
+					<a href="<?php echo admin_url(); ?>"><?php _e('ダッシュボード', $this->plugin_slug); ?></a>
 				</div>
 			<?php } ?>    
         </div>
