@@ -15,6 +15,7 @@
  * GitHub Branch: master
  * Text Domain: wp-maintenance-page
  * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 /*  Copyright 2017 Kosugi_kun (email : info@mcpenano.net)
  
