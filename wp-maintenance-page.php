@@ -6,7 +6,7 @@
  * Plugin Name: WP Maintenance page
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Donate link: https://mcpenano.net/donation/
@@ -36,7 +36,6 @@
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/wp-maintenance-page/',
-	'https://mcpenano.net/plugin/plugin.json
 	__FILE__,
 	'wp-maintenance-page'
 );
