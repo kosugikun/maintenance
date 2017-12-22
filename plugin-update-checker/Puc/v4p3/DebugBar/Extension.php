@@ -1,23 +1,18 @@
 <?php
 if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
-
 	class Puc_v4p3_DebugBar_Extension {
 		/** @var Puc_v4p3_UpdateChecker */
 		protected $updateChecker;
 		protected $panelClass = 'Puc_v4p3_DebugBar_Panel';
-
 		public function __construct($updateChecker, $panelClass = null) {
 			$this->updateChecker = $updateChecker;
 			if ( isset($panelClass) ) {
 				$this->panelClass = $panelClass;
 			}
-
 			add_filter('debug_bar_panels', array($this, 'addDebugBarPanel'));
 			add_action('debug_bar_enqueue_scripts', array($this, 'enqueuePanelDependencies'));
-
 			add_action('wp_ajax_puc_v4_debug_check_now', array($this, 'ajaxCheckNow'));
 		}
-
 		/**
 		 * Register the PUC Debug Bar panel.
 		 *
@@ -30,7 +25,6 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 			}
 			return $panels;
 		}
-
 		/**
 		 * Enqueue our Debug Bar scripts and styles.
 		 */
@@ -41,7 +35,6 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 				array('debug-bar'),
 				'20161217'
 			);
-
 			wp_enqueue_script(
 				'puc-debug-bar-js-v4',
 				$this->getLibraryUrl("/js/debug-bar.js"),
@@ -49,7 +42,6 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 				'20170516'
 			);
 		}
-
 		/**
 		 * Run an update check and output the result. Useful for making sure that
 		 * the update checking process works as expected.
@@ -61,41 +53,35 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 			$this->preAjaxRequest();
 			$update = $this->updateChecker->checkForUpdates();
 			if ( $update !== null ) {
-				echo "An update is available:";
+				echo "アップデートが利用可能です：";
 				echo '<pre>', htmlentities(print_r($update, true)), '</pre>';
 			} else {
-				echo 'No updates found.';
+				echo '更新は見つかりませんでした。';
 			}
 			exit;
 		}
-
 		/**
 		 * Check access permissions and enable error display (for debugging).
 		 */
 		protected function preAjaxRequest() {
 			if ( !$this->updateChecker->userCanInstallUpdates() ) {
-				die('Access denied');
+				die('アクセスが拒否されました');
 			}
 			check_ajax_referer('puc-ajax');
-
 			error_reporting(E_ALL);
 			@ini_set('display_errors','On');
 		}
-
 		/**
 		 * @param string $filePath
 		 * @return string
 		 */
 		private function getLibraryUrl($filePath) {
 			$absolutePath = realpath(dirname(__FILE__) . '/../../../' . ltrim($filePath, '/'));
-
 			//Where is the library located inside the WordPress directory structure?
 			$absolutePath = Puc_v4_Factory::normalizePath($absolutePath);
-
 			$pluginDir = Puc_v4_Factory::normalizePath(WP_PLUGIN_DIR);
 			$muPluginDir = Puc_v4_Factory::normalizePath(WPMU_PLUGIN_DIR);
 			$themeDir = Puc_v4_Factory::normalizePath(get_theme_root());
-
 			if ( (strpos($absolutePath, $pluginDir) === 0) || (strpos($absolutePath, $muPluginDir) === 0) ) {
 				//It's part of a plugin.
 				return plugins_url(basename($absolutePath), $absolutePath);
@@ -104,14 +90,11 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 				$relativePath = substr($absolutePath, strlen($themeDir) + 1);
 				$template = substr($relativePath, 0, strpos($relativePath, '/'));
 				$baseUrl = get_theme_root_uri($template);
-
 				if ( !empty($baseUrl) && $relativePath ) {
 					return $baseUrl . '/' . $relativePath;
 				}
 			}
-
 			return '';
 		}
 	}
-
 endif;
