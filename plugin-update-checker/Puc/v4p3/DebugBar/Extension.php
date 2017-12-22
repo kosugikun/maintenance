@@ -61,10 +61,10 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 			$this->preAjaxRequest();
 			$update = $this->updateChecker->checkForUpdates();
 			if ( $update !== null ) {
-				echo "アップデートが利用可能です：";
+				echo "An update is available:";
 				echo '<pre>', htmlentities(print_r($update, true)), '</pre>';
 			} else {
-				echo '更新は見つかりませんでした。';
+				echo 'No updates found.';
 			}
 			exit;
 		}
@@ -74,7 +74,7 @@ if ( !class_exists('Puc_v4p3_DebugBar_Extension', false) ):
 		 */
 		protected function preAjaxRequest() {
 			if ( !$this->updateChecker->userCanInstallUpdates() ) {
-				die('アクセスが拒否されました');
+				die('Access denied');
 			}
 			check_ajax_referer('puc-ajax');
 
