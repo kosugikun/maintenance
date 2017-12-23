@@ -7,7 +7,7 @@ Tested up to: 4.9.1
 Stable tag: 4.9
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Upgrade notice: 開発中のバージョンです。
+Upgrade notice: 開発中のバージョンです。プラグインの仕様変更のため設定がリセットされる場合がありましす。
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
@@ -30,6 +30,10 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.1.0 =
+プラグインの仕様変更
+今回のアップデートは大きなアップデートです。
+
 = 1.0.5 =
 日本語化強化
 メンテナンスページの翻訳修正をしました。
