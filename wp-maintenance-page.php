@@ -6,16 +6,31 @@
  * Plugin Name: WP Maintenance page
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページがメンテナンス中であることを簡単に教えてください。
- * Version: 1.1.0-beta.2
+ * Version: 1.1.0-beta.3
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kun
  * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance/
  * GitHub Branch: master
  * Text Domain: wp-maintenance-page
- * License: GPL-2.0+
+ * License: GPL2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
+/*  Copyright 2017 Kosugikun (email : info@mcpenano.net)
+ 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as
+     published by the Free Software Foundation.
+ 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+ 
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/kosugikun/wp-maintenance-page/',
