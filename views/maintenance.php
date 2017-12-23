@@ -21,11 +21,11 @@
 
 		// do some actions
 		do_action('wm_head'); // this hook will be removed in the next versions
-		do_action('wpmm_head');
+		do_action('wpmp_head');
 		?>
     </head>
     <body class="<?php echo $body_classes ? $body_classes : ''; ?>">
-		<?php do_action('wpmm_after_body'); ?>
+		<?php do_action('wpmp_after_body'); ?>
 
         <div class="wrap">
 			<?php if (!empty($heading)) { ?><h1><?php echo stripslashes($heading); ?></h1><?php } ?>
@@ -83,21 +83,21 @@
 					<?php list($open, $close) = !empty($this->plugin_settings['modules']['contact_effects']) && strstr($this->plugin_settings['modules']['contact_effects'], '|') ? explode('|', $this->plugin_settings['modules']['contact_effects']) : explode('|', 'move_top|move_bottom'); ?>
 					<div class="form <?php echo esc_attr($open); ?>">
 						<form class="contact_form">
-							<?php do_action('wpmm_contact_form_start'); ?>
+							<?php do_action('wpmp_contact_form_start'); ?>
 
 							<p class="col"><input type="text" placeholder="<?php _e('名前', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" name="name" class="name_input" /></p>
 							<p class="col last"><input type="text" placeholder="<?php _e('Eメール', $this->plugin_slug); ?>" data-rule-required="true" data-rule-email="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" data-msg-email="<?php esc_attr_e('Please enter a valid email address.', $this->plugin_slug); ?>" name="email" class="email_input" /></p>
 							<br clear="all" />
 
-							<?php do_action('wpmm_contact_form_before_message'); ?>
+							<?php do_action('wpmp_contact_form_before_message'); ?>
 
 							<p><textarea placeholder="<?php _e('あなたのメッセージ', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', $this->plugin_slug); ?>" name="content" class="content_textarea"></textarea></p>
 
-							<?php do_action('wpmm_contact_form_after_message'); ?>
+							<?php do_action('wpmp_contact_form_after_message'); ?>
 
 							<p class="submit"><input type="submit" value="<?php _e('送信', $this->plugin_slug); ?>"></p>
 
-							<?php do_action('wpmm_contact_form_end'); ?>
+							<?php do_action('wpmp_contact_form_end'); ?>
 						</form>
 					</div>
 				</div>                
@@ -113,7 +113,7 @@
         </div>
 
         <script type='text/javascript'>
-			var wpmm_vars = {"ajax_url": "<?php echo admin_url('admin-ajax.php'); ?>"};
+			var wpmp_vars = {"ajax_url": "<?php echo admin_url('admin-ajax.php'); ?>"};
         </script>
 		<?php
 		if (!empty($scripts) && is_array($scripts)) {
@@ -126,7 +126,7 @@
 
 		// Do some actions
 		do_action('wm_footer'); // this hook will be removed in the next versions
-		do_action('wpmm_footer');
+		do_action('wpmp_footer');
 		?>
     </body>
 </html>

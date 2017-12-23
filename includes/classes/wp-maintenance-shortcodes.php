@@ -68,7 +68,7 @@ if (!class_exists('WP_Maintenance_Shortcode_Login')) {
         public static function display($atts) {
             extract(shortcode_atts(array('redirect' => ''), $atts));
 
-            include_once(WPMM_VIEWS_PATH . 'loginform.php');
+            include_once(WPMP_VIEWS_PATH . 'loginform.php');
         }
 
     }

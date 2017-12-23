@@ -9,7 +9,7 @@
  */
 function wpmm_plugin_info($plugin_slug) {
 	add_filter('extra_plugin_headers', create_function('', 'return array("GitHub Plugin URI","Twitter");'));
-	$plugin_data = get_plugin_data(WPMM_PATH . $plugin_slug . '.php');
+	$plugin_data = get_plugin_data(WPMP_PATH . $plugin_slug . '.php');
 
 	return $plugin_data;
 }
@@ -25,7 +25,7 @@ function wpmm_plugin_info($plugin_slug) {
  * @param string $field
  * @param array $where eg: array('id_subscriber = %d' => 12)
  */
-function wpmm_count_where($table, $field = 'ID', $where = array()) {
+function wpmp_count_where($table, $field = 'ID', $where = array()) {
 	global $wpdb;
 
 	$table = $wpdb->prefix . $table;
@@ -69,7 +69,7 @@ function wpmm_multiselect($values, $current) {
  * @return array
  */
 function wpmm_get_banners() {
-	$banners_path = WPMM_URL . 'assets/images/resources/';
+	$banners_path = WPMP_URL . 'assets/images/resources/';
 
 	return array(
 		'product' => array(

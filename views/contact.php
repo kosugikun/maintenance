@@ -23,7 +23,7 @@
                         </tr>
                         <tr>
                             <td style="text-align:center;">
-                                <img src="<?php echo WPMM_IMAGES_URL . 'icon-48.png'; ?>" />
+                                <img src="<?php echo WPMP_IMAGES_URL . 'icon-48.png'; ?>" />
                             </td>
                         </tr>
                         <tr>
@@ -41,7 +41,7 @@
                             <td width="100%">
                                 <table cellspacing="0" cellpadding="0" width="100%">
                                     <tbody>
-										<?php do_action('wpmm_contact_template_start'); ?>
+										<?php do_action('wpmp_contact_template_start'); ?>
 
                                         <tr>
                                             <td height="30"></td>
@@ -68,7 +68,7 @@
                                             </td>
                                         </tr>
 
-										<?php do_action('wpmm_contact_template_before_message'); ?>
+										<?php do_action('wpmp_contact_template_before_message'); ?>
 
                                         <tr>
                                             <td height="30"></td>
@@ -85,9 +85,9 @@
                                             </td>
                                         </tr> 
 
-										<?php do_action('wpmm_contact_template_after_message'); ?>
+										<?php do_action('wpmp_contact_template_after_message'); ?>
 
-										<?php do_action('wpmm_contact_template_end'); ?>
+										<?php do_action('wpmp_contact_template_end'); ?>
                                     </tbody>
                                 </table>
                             </td>

@@ -12,8 +12,8 @@ if (!class_exists('WP_Maintenance_page')) {
 		protected static $instance = null;
 
 		private function __construct() {
-			$this->plugin_settings = get_option('wpmm_settings');
-			$this->plugin_basename = plugin_basename(WPMM_PATH . $this->plugin_slug . '.php');
+			$this->plugin_settings = get_option('wpmp_settings');
+			$this->plugin_basename = plugin_basename(WPMP_PATH . $this->plugin_slug . '.php');
 
 			// Load plugin text domain
 			add_action('init', array($this, 'load_plugin_textdomain'));
@@ -32,16 +32,16 @@ if (!class_exists('WP_Maintenance_page')) {
 				add_action('init', array($this, 'init'));
 
 				// Add ajax methods
-				add_action('wp_ajax_nopriv_wpmm_add_subscriber', array($this, 'add_subscriber'));
-				add_action('wp_ajax_wpmm_add_subscriber', array($this, 'add_subscriber'));
-				add_action('wp_ajax_nopriv_wpmm_send_contact', array($this, 'send_contact'));
-				add_action('wp_ajax_wpmm_send_contact', array($this, 'send_contact'));
+				add_action('wp_ajax_nopriv_wpmp_add_subscriber', array($this, 'add_subscriber'));
+				add_action('wp_ajax_wpmp_add_subscriber', array($this, 'add_subscriber'));
+				add_action('wp_ajax_nopriv_wpmp_send_contact', array($this, 'send_contact'));
+				add_action('wp_ajax_wpmp_send_contact', array($this, 'send_contact'));
 
 				// Redirect 
 				add_action('init', array($this, 'redirect'), 9);
 
 				// Google Analytics tracking script
-				add_action('wpmm_head', array($this, 'google_analytics_code'));
+				add_action('wpmp_head', array($this, 'google_analytics_code'));
 			}
 		}
 
@@ -98,8 +98,8 @@ if (!class_exists('WP_Maintenance_page')) {
 					'admin_link' => 0
 				),
 				'design' => array(
-					'title' => __('Maintenance mode', $this->plugin_slug),
-					'heading' => __('Maintenance mode', $this->plugin_slug),
+					'title' => __('Maintenance page', $this->plugin_slug),
+					'heading' => __('Maintenance page', $this->plugin_slug),
 					'heading_color' => '',
 					'text' => __('<p>ご不便をおかけして申し訳ございません。<br />当ウェブサイトは現在、定期的なメンテナンスを行っています。<br />ご理解いただきありがとうございます。</p>', $this->plugin_slug),
 					'text_color' => '',
@@ -148,7 +148,7 @@ if (!class_exists('WP_Maintenance_page')) {
 		 */
 		public static function activate($network_wide) {
 			// because we need translated items when activate :)
-			load_plugin_textdomain(self::get_instance()->plugin_slug, FALSE, WPMM_LANGUAGES_PATH);
+			load_plugin_textdomain(self::get_instance()->plugin_slug, FALSE, WPMP_LANGUAGES_PATH);
 
 			// do the job
 			if (function_exists('is_multisite') && is_multisite()) {
@@ -178,7 +178,7 @@ if (!class_exists('WP_Maintenance_page')) {
 		 * @since 2.0.3
 		 */
 		public function check_update() {
-			$version = get_option('wpmm_version', '0');
+			$version = get_option('wpmp_version', '0');
 
 			if (!version_compare($version, WP_Maintenance_page::VERSION, '=')) {
 				self::activate(is_multisite() && is_plugin_active_for_network($this->plugin_basename) ? true : false);
@@ -235,8 +235,8 @@ if (!class_exists('WP_Maintenance_page')) {
 		public static function single_activate($network_wide = false) {
 			global $wpdb;
 
-			// create wpmm_subscribers table
-			$sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}wpmm_subscribers (
+			// create wpmp_subscribers table
+			$sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}wpmp_subscribers (
                     `id_subscriber` bigint(20) NOT NULL AUTO_INCREMENT,
                     `email` varchar(50) NOT NULL,
                     `insert_date` datetime NOT NULL,
@@ -246,7 +246,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			dbDelta($sql);
 
 			// get all options for different versions of the plugin
-			$v2_options = get_option('wpmm_settings');
+			$v2_options = get_option('wpmp_settings');
 			$old_options = (is_multisite() && $network_wide) ? get_site_option('wp-maintenance-page') : get_option('wp-maintenance-page');
 			$default_options = self::get_instance()->default_settings();
 
@@ -256,7 +256,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			 * -  set notice if the plugin was installed before & set default settings
 			 */
 			if (!empty($old_options) && empty($v2_options)) {
-				add_option('wpmm_notice', array(
+				add_option('wpmp_notice', array(
 					'class' => 'updated notice',
 					'msg' => sprintf(__('WPメンテナンスプラグインが再起動されたので、<a href="%s">設定</a>を改訂する必要があります。', self::get_instance()->plugin_slug), admin_url('options-general.php?page=' . self::get_instance()->plugin_slug))
 				));
@@ -375,21 +375,21 @@ if (!class_exists('WP_Maintenance_page')) {
 
 			if (empty($v2_options)) {
 				// set options
-				add_option('wpmm_settings', $default_options);
+				add_option('wpmp_settings', $default_options);
 			}
 
 			/**
 			 * Update from <= v2.0.6 to v2.0.7
 			 */
 			if (!empty($v2_options['modules']['ga_code'])) {
-				$v2_options['modules']['ga_code'] = wpmm_sanitize_ga_code($v2_options['modules']['ga_code']);
+				$v2_options['modules']['ga_code'] = wpmp_sanitize_ga_code($v2_options['modules']['ga_code']);
 
 				// update options
-				update_option('wpmm_settings', $v2_options);
+				update_option('wpmp_settings', $v2_options);
 			}
 
 			// set current version
-			update_option('wpmm_version', WP_Maintenance_page::VERSION);
+			update_option('wpmp_version', WP_Maintenance_page::VERSION);
 		}
 
 		/**
@@ -423,7 +423,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			$locale = apply_filters('plugin_locale', get_locale(), $domain);
 
 			load_textdomain($domain, trailingslashit(WP_LANG_DIR) . $domain . '/' . $domain . '-' . $locale . '.mo');
-			load_plugin_textdomain($domain, FALSE, WPMM_LANGUAGES_PATH);
+			load_plugin_textdomain($domain, FALSE, WPMP_LANGUAGES_PATH);
 		}
 
 		/**
@@ -455,28 +455,28 @@ if (!class_exists('WP_Maintenance_page')) {
 				$protocol = !empty($_SERVER['SERVER_PROTOCOL']) && in_array($_SERVER['SERVER_PROTOCOL'], array('HTTP/1.1', 'HTTP/1.0')) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0';
 				$charset = get_bloginfo('charset') ? get_bloginfo('charset') : 'UTF-8';
 				$status_code = (int) apply_filters('wp_maintenance_status_code', 503); // this hook will be removed in the next versions
-				$status_code = (int) apply_filters('wpmm_status_code', 503);
+				$status_code = (int) apply_filters('wpmp_status_code', 503);
 				$backtime_seconds = $this->calculate_backtime();
-				$backtime = (int) apply_filters('wpmm_backtime', $backtime_seconds);
+				$backtime = (int) apply_filters('wpmp_backtime', $backtime_seconds);
 
 				// META STUFF
 				$title = !empty($this->plugin_settings['design']['title']) ? $this->plugin_settings['design']['title'] : get_bloginfo('name') . ' - ' . __('Maintenance', $this->plugin_slug);
 				$title = apply_filters('wm_title', $title); // this hook will be removed in the next versions
-				$title = apply_filters('wpmm_meta_title', $title);
+				$title = apply_filters('wpmp_meta_title', $title);
 
 				$robots = $this->plugin_settings['general']['meta_robots'] == 1 ? 'noindex, nofollow' : 'index, follow';
-				$robots = apply_filters('wpmm_meta_robots', $robots);
+				$robots = apply_filters('wpmp_meta_robots', $robots);
 
 				$author = apply_filters('wm_meta_author', get_bloginfo('name')); // this hook will be removed in the next versions
-				$author = apply_filters('wpmm_meta_author', get_bloginfo('name'));
+				$author = apply_filters('wpmp_meta_author', get_bloginfo('name'));
 
 				$description = get_bloginfo('name') . ' - ' . get_bloginfo('description');
 				$description = apply_filters('wm_meta_description', $description); // this hook will be removed in the next versions
-				$description = apply_filters('wpmm_meta_description', $description);
+				$description = apply_filters('wpmp_meta_description', $description);
 
 				$keywords = __('Maintenance', $this->plugin_slug);
 				$keywords = apply_filters('wm_meta_keywords', $keywords); // this hook will be removed in the next versions
-				$keywords = apply_filters('wpmm_meta_keywords', $keywords);
+				$keywords = apply_filters('wpmp_meta_keywords', $keywords);
 
 				// CSS STUFF
 				$body_classes = !empty($this->plugin_settings['design']['bg_type']) && $this->plugin_settings['design']['bg_type'] != 'color' ? 'background' : '';
@@ -487,10 +487,10 @@ if (!class_exists('WP_Maintenance_page')) {
 				// CONTENT
 				$heading = !empty($this->plugin_settings['design']['heading']) ? $this->plugin_settings['design']['heading'] : '';
 				$heading = apply_filters('wm_heading', $heading); // this hook will be removed in the next versions
-				$heading = apply_filters('wpmm_heading', $heading);
+				$heading = apply_filters('wpmp_heading', $heading);
 
 				$text = !empty($this->plugin_settings['design']['text']) ? $this->plugin_settings['design']['text'] : '';
-				$text = apply_filters('wpmm_text', do_shortcode($text));
+				$text = apply_filters('wpmp_text', do_shortcode($text));
 
 				// COUNTDOWN
 				$countdown_start = !empty($this->plugin_settings['modules']['countdown_start']) ? $this->plugin_settings['modules']['countdown_start'] : $this->plugin_settings['general']['status_data'];
@@ -500,23 +500,23 @@ if (!class_exists('WP_Maintenance_page')) {
 				$wp_scripts = wp_scripts();
 
 				$scripts = array(
-					'jquery' => !empty($wp_scripts->registered['jquery-core']) ? site_url($wp_scripts->registered['jquery-core']->src) : '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery' . WPMM_ASSETS_SUFFIX . '.js',
-					'frontend' => WPMM_JS_URL . 'scripts' . WPMM_ASSETS_SUFFIX . '.js'
+					'jquery' => !empty($wp_scripts->registered['jquery-core']) ? site_url($wp_scripts->registered['jquery-core']->src) : '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery' . WPMP_ASSETS_SUFFIX . '.js',
+					'frontend' => WPMP_JS_URL . 'scripts' . WPMP_ASSETS_SUFFIX . '.js'
 				);
 				if (!empty($this->plugin_settings['modules']['countdown_status']) && $this->plugin_settings['modules']['countdown_status'] == 1) {
-					$scripts['countdown-dependency'] = WPMM_JS_URL . 'jquery.plugin' . WPMM_ASSETS_SUFFIX . '.js';
-					$scripts['countdown'] = WPMM_JS_URL . 'jquery.countdown' . WPMM_ASSETS_SUFFIX . '.js';
+					$scripts['countdown-dependency'] = WPMP_JS_URL . 'jquery.plugin' . WPMP_ASSETS_SUFFIX . '.js';
+					$scripts['countdown'] = WPMP_JS_URL . 'jquery.countdown' . WPMP_ASSETS_SUFFIX . '.js';
 				}
 				if ((!empty($this->plugin_settings['modules']['contact_status']) && $this->plugin_settings['modules']['contact_status'] == 1) || (!empty($this->plugin_settings['modules']['subscribe_status']) && $this->plugin_settings['modules']['subscribe_status'] == 1)) {
-					$scripts['validate'] = WPMM_JS_URL . 'jquery.validate' . WPMM_ASSETS_SUFFIX . '.js';
+					$scripts['validate'] = WPMP_JS_URL . 'jquery.validate' . WPMP_ASSETS_SUFFIX . '.js';
 				}
-				$scripts = apply_filters('wpmm_scripts', $scripts);
+				$scripts = apply_filters('wpmp_scripts', $scripts);
 
 				// CSS FILES
 				$styles = array(
-					'frontend' => WPMM_CSS_URL . 'style' . WPMM_ASSETS_SUFFIX . '.css'
+					'frontend' => WPMP_CSS_URL . 'style' . WPMP_ASSETS_SUFFIX . '.css'
 				);
-				$styles = apply_filters('wpmm_styles', $styles);
+				$styles = apply_filters('wpmp_styles', $styles);
 
 				nocache_headers();
 				ob_start();
@@ -532,7 +532,7 @@ if (!class_exists('WP_Maintenance_page')) {
 				} else if (file_exists(WP_CONTENT_DIR . '/wp-maintenance-page.php')) { // check `wp-content` folder
 					include_once(WP_CONTENT_DIR . '/wp-maintenance-page.php');
 				} else { // load from plugin `views` folder
-					include_once(WPMM_VIEWS_PATH . 'maintenance.php');
+					include_once(WPMP_VIEWS_PATH . 'maintenance.php');
 				}
 				ob_flush();
 
@@ -592,7 +592,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			$is_search_bots = false;
 
 			if (!empty($this->plugin_settings['general']['bypass_bots']) && $this->plugin_settings['general']['bypass_bots'] == 1) {
-				$bots = apply_filters('wpmm_search_bots', array(
+				$bots = apply_filters('wpmp_search_bots', array(
 					'Abacho' => 'AbachoBOT',
 					'Accoona' => 'Acoon',
 					'AcoiRobot' => 'AcoiRobot',
@@ -650,7 +650,7 @@ if (!class_exists('WP_Maintenance_page')) {
 				}
 			}
 
-			$is_excluded = apply_filters('wpmm_is_excluded', $is_excluded, $excluded_list);
+			$is_excluded = apply_filters('wpmp_is_excluded', $is_excluded, $excluded_list);
 
 			return $is_excluded;
 		}
@@ -703,13 +703,13 @@ if (!class_exists('WP_Maintenance_page')) {
 			}
 
 			// sanitize code
-			$ga_code = wpmm_sanitize_ga_code($this->plugin_settings['modules']['ga_code']);
+			$ga_code = wpmp_sanitize_ga_code($this->plugin_settings['modules']['ga_code']);
 			if (empty($ga_code)) {
 				return false;
 			}
 
 			// show google analytics javascript snippet
-			include_once(WPMM_VIEWS_PATH . 'google-analytics.php');
+			include_once(WPMP_VIEWS_PATH . 'google-analytics.php');
 		}
 
 		/**
@@ -731,9 +731,9 @@ if (!class_exists('WP_Maintenance_page')) {
 				}
 
 				// save
-				$exists = $wpdb->get_row($wpdb->prepare("SELECT id_subscriber FROM {$wpdb->prefix}wpmm_subscribers WHERE email = %s", sanitize_text_field($_POST['email'])), ARRAY_A);
+				$exists = $wpdb->get_row($wpdb->prepare("SELECT id_subscriber FROM {$wpdb->prefix}wpmp_subscribers WHERE email = %s", sanitize_text_field($_POST['email'])), ARRAY_A);
 				if (empty($exists)) {
-					$wpdb->insert($wpdb->prefix . 'wpmm_subscribers', array(
+					$wpdb->insert($wpdb->prefix . 'wpmp_subscribers', array(
 						'email' => sanitize_text_field($_POST['email']),
 						'insert_date' => date('Y-m-d H:i:s')
 							), array('%s', '%s'));
@@ -765,13 +765,13 @@ if (!class_exists('WP_Maintenance_page')) {
 				}
 				
 				// if you add new fields to the contact form... you will definitely need to validate their values
-				do_action('wpmm_contact_validation', $_POST);
+				do_action('wpmp_contact_validation', $_POST);
 
 				// vars
 				$send_to = !empty($this->plugin_settings['modules']['contact_email']) ? stripslashes($this->plugin_settings['modules']['contact_email']) : get_option('admin_email');
-				$subject = apply_filters('wpmm_contact_subject', __('Message via contact', $this->plugin_slug));
-				$headers = apply_filters('wpmm_contact_headers', array('Reply-To: ' . sanitize_text_field($_POST['email'])));
-				$template_path = apply_filters('wpmm_contact_template', WPMM_VIEWS_PATH . 'contact.php');
+				$subject = apply_filters('wpmp_contact_subject', __('Message via contact', $this->plugin_slug));
+				$headers = apply_filters('wpmp_contact_headers', array('Reply-To: ' . sanitize_text_field($_POST['email'])));
+				$template_path = apply_filters('wpmp_contact_template', WPMP_VIEWS_PATH . 'contact.php');
 
 				ob_start();
 				include_once($template_path);
