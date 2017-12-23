@@ -11,11 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-
 あなたのページがメンテナンス中であることを簡単に教えてください。
 
 == Installation ==
-
 このセクションでは、プラグインをインストールして動作させる方法について説明します。<br>
 
 
@@ -26,7 +24,6 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 4.（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
 
 == Frequently asked questions ==
-
 = 完全無料ですか？ =
 はい。完全無料です。
 
@@ -35,7 +32,6 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
-
 = 1.1.0 =
 プラグインの仕様変更
 今回のアップデートは大きなアップデートです。
@@ -58,5 +54,4 @@ World Press 4.9.1をサポート対象にしました。
 その他細かい修正
 
 == Upgrade notice ==
-
 ベータ版です。
