@@ -4,7 +4,7 @@ Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 3.3
 Tested up to: 4.9.1
-Stable tag: 1.0.6
+Stable tag: 1.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,26 +23,34 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WP-Maintenance-page`ディレクトリにアップロードするか、WordPressプラグイン画面からプラグインを直接インストールします。<br>
 2.WordPressの「プラグイン」画面からプラグインを有効にする<br>
 3.設定->プラグイン名画面を使用してプラグインを設定します<br>
-4.（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
+（あなたの指示を、プラグインを有効にしてインストールするための望ましいユーザーフローと一致させます。説明のために必要な手順を含めてください）
 
 == Frequently asked questions ==
 
 = 完全無料ですか？ =
 はい。完全無料です。
+= カスタマイズ可能ですか？ =
+カスタマイズ可能です。
 
 == Screenshots ==
+= 近日追加予定 =
 
 
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.1.1 =
 プラグインの仕様変更
-今回のアップデートは大きなアップデートです。
+プラグインの仕様変更に伴い設定がリセットされます。
+他のプラグインと競合してしまうバクを修正
+プラグイン内テキストを修正
+カウントダウンの設定を日本仕様に変更
+
 
 = 1.0.5 =
 日本語化強化
 メンテナンスページの翻訳修正をしました。
+
 
 = 1.0.4 =
 細かな修正
