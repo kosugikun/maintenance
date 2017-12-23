@@ -96,7 +96,7 @@ jQuery(function($) {
      * SUBSCRIBERS EXPORT
      */
     $('#subscribers-export').click(function() {
-        $('<iframe />').attr('src', wpmm_vars.ajax_url + '?action=wpmm_subscribers_export').appendTo('body').hide();
+        $('<iframe />').attr('src', wpmp_vars.ajax_url + '?action=wpmp_subscribers_export').appendTo('body').hide();
     });
 
     /**
@@ -105,8 +105,8 @@ jQuery(function($) {
      * @since 2.0.4
      */
     $('#subscribers-empty-list').click(function() {
-        $.post(wpmm_vars.ajax_url, {
-            action: 'wpmm_subscribers_empty_list'
+        $.post(wpmp_vars.ajax_url, {
+            action: 'wpmp_subscribers_empty_list'
         }, function(response) {
             if (!response.success) {
                 alert(response.data);
@@ -124,8 +124,8 @@ jQuery(function($) {
         var tab = $(this).data('tab'),
                 nonce = $('#tab-' + tab + ' #_wpnonce').val();
                 
-        $.post(wpmm_vars.ajax_url, {
-            action: 'wpmm_reset_settings',
+        $.post(wpmp_vars.ajax_url, {
+            action: 'wpmp_reset_settings',
             tab: tab,
             _wpnonce: nonce
         }, function(response) {
@@ -141,5 +141,5 @@ jQuery(function($) {
     /**
      * COUNTDOWN TIMEPICKER
      */
-    $('.countdown_start').datetimepicker({timeFormat: 'HH:mm:ss', dateFormat: 'dd-mm-yy'});
+    $('.countdown_start').datetimepicker({timeFormat: 'HH:mm:ss', dateFormat: 'yy-mm-dd'});
 });

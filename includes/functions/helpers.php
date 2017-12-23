@@ -52,7 +52,7 @@ function wpmp_count_where($table, $field = 'ID', $where = array()) {
  * @param bool $echo
  * @return string html attribute or empty string
  */
-function wpmm_multiselect($values, $current) {
+function wpmp_multiselect($values, $current) {
 	foreach ($values as $k => $role) {
 		$is_selected = __checked_selected_helper($role, $current, false, 'selected');
 		if (!empty($is_selected)) {
@@ -68,7 +68,7 @@ function wpmm_multiselect($values, $current) {
  * @since 2.0.4
  * @return array
  */
-function wpmm_get_banners() {
+function wpmp_get_banners() {
 	$banners_path = WPMP_URL . 'assets/images/resources/';
 
 	return array(
@@ -120,7 +120,7 @@ function wpmm_get_banners() {
  * @param string $string
  * @return string
  */
-function wpmm_sanitize_ga_code($string) {
+function wpmp_sanitize_ga_code($string) {
 	preg_match('/UA-\d{4,10}(-\d{1,4})?/', $string, $matches);
 
 	return isset($matches[0]) ? $matches[0] : '';
