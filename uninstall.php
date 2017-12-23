@@ -10,12 +10,12 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
  */
 function single_uninstall() {
     // delete subscribers table
-    $GLOBALS['wpdb']->query("DROP TABLE IF EXISTS {$GLOBALS['wpdb']->prefix}wpmm_subscribers");
+    $GLOBALS['wpdb']->query("DROP TABLE IF EXISTS {$GLOBALS['wpdb']->prefix}wpmp_subscribers");
 
     // delete options
-    delete_option('wpmm_settings');
-    delete_option('wpmm_notice');
-    delete_option('wpmm_version');
+    delete_option('wpmp_settings');
+    delete_option('wpmp_notice');
+    delete_option('wpmp_version');
 }
 
 // Let's do it!
