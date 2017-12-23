@@ -33,31 +33,31 @@ if (!defined('ABSPATH'))
 /**
  * DEFINE PATHS
  */
-define('WPMM_PATH', plugin_dir_path(__FILE__));
-define('WPMM_CLASSES_PATH', WPMM_PATH . 'includes/classes/');
-define('WPMM_FUNCTIONS_PATH', WPMM_PATH . 'includes/functions/');
-define('WPMM_LANGUAGES_PATH', basename(WPMM_PATH) . '/languages/');
-define('WPMM_VIEWS_PATH', WPMM_PATH . 'views/');
-define('WPMM_CSS_PATH', WPMM_PATH . 'assets/css/');
+define('WPMP_PATH', plugin_dir_path(__FILE__));
+define('WPMP_CLASSES_PATH', WPMP_PATH . 'includes/classes/');
+define('WPMP_FUNCTIONS_PATH', WPMP_PATH . 'includes/functions/');
+define('WPMP_LANGUAGES_PATH', basename(WPMP_PATH) . '/languages/');
+define('WPMP_VIEWS_PATH', WPMP_PATH . 'views/');
+define('WPMP_CSS_PATH', WPMP_PATH . 'assets/css/');
 
 /**
  * DEFINE URLS
  */
-define('WPMM_URL', plugin_dir_url(__FILE__));
-define('WPMM_JS_URL', WPMM_URL . 'assets/js/');
-define('WPMM_CSS_URL', WPMM_URL . 'assets/css/');
-define('WPMM_IMAGES_URL', WPMM_URL . 'assets/images/');
-define('WPMM_AUTHOR_UTM', '?utm_source=wpplugin&utm_medium=wpmaintenance');
+define('WPMP_URL', plugin_dir_url(__FILE__));
+define('WPMP_JS_URL', WPMP_URL . 'assets/js/');
+define('WPMP_CSS_URL', WPMP_URL . 'assets/css/');
+define('WPMP_IMAGES_URL', WPMP_URL . 'assets/images/');
+define('WPMP_AUTHOR_UTM', '?utm_source=wpplugin&utm_medium=wpmaintenance');
 
 /**
  * OTHER DEFINES
  */
-define('WPMM_ASSETS_SUFFIX', (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min');
+define('WPMP_ASSETS_SUFFIX', (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min');
 
 /**
  * FUNCTIONS
  */
-require_once(WPMM_FUNCTIONS_PATH . 'helpers.php');
+require_once(WPMP_FUNCTIONS_PATH . 'helpers.php');
 if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 }
@@ -65,8 +65,8 @@ if (is_multisite() && !function_exists('is_plugin_active_for_network')) {
 /**
  * FRONTEND
  */
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-shortcodes.php');
-require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page.php');
+require_once(WPMP_CLASSES_PATH . 'wp-maintenance-shortcodes.php');
+require_once(WPMP_CLASSES_PATH . 'wp-maintenance-page.php');
 register_activation_hook(__FILE__, array('WP_Maintenance_page', 'activate'));
 register_deactivation_hook(__FILE__, array('WP_Maintenance_page', 'deactivate'));
 
@@ -76,6 +76,6 @@ add_action('plugins_loaded', array('WP_Maintenance_page', 'get_instance'));
  * DASHBOARD
  */
 if (is_admin()) {
-    require_once(WPMM_CLASSES_PATH . 'wp-maintenance-page-admin.php');
+    require_once(WPMP_CLASSES_PATH . 'wp-maintenance-page-admin.php');
     add_action('plugins_loaded', array('WP_Maintenance_page_Admin', 'get_instance'));
 }
