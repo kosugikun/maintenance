@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h2 class="wpmm-title"><?php echo get_admin_page_title(); ?></h2>
+    <h2 class="wpmp-title"><?php echo get_admin_page_title(); ?></h2>
 
     <?php if (!empty($_POST)) { ?>
         <div class="updated settings-error" id="setting-error-settings_updated"> 
@@ -7,7 +7,7 @@
         </div>
     <?php } ?>
 
-    <div class="wpmm-wrapper">
+    <div class="wpmp-wrapper">
         <div id="content" class="wrapper-cell">
             <div class="nav-tab-wrapper">
                 <a class="nav-tab nav-tab-active" href="#general"><?php _e('一般', $this->plugin_slug); ?></a>
@@ -47,7 +47,7 @@
                                                     continue;
                                                 }
                                                 ?>
-                                                <option value="<?php echo esc_attr($role); ?>" <?php echo wpmm_multiselect((array) $this->plugin_settings['general']['backend_role'], $role); ?>><?php echo $details['name']; ?></option>
+                                                <option value="<?php echo esc_attr($role); ?>" <?php echo wpmp_multiselect((array) $this->plugin_settings['general']['backend_role'], $role); ?>><?php echo $details['name']; ?></option>
                                             <?php } ?>
                                         </select>
                                         <p class="description"><?php _e('このブログのバックエンドにアクセスできるユーザーの役割は何ですか？管理者は常にアクセス権を持ちます。', $this->plugin_slug); ?></p>
@@ -63,7 +63,7 @@
                                                     continue;
                                                 }
                                                 ?>
-                                                <option value="<?php echo esc_attr($role); ?>" <?php echo wpmm_multiselect((array) $this->plugin_settings['general']['frontend_role'], $role); ?>><?php echo $details['name']; ?></option>
+                                                <option value="<?php echo esc_attr($role); ?>" <?php echo wpmp_multiselect((array) $this->plugin_settings['general']['frontend_role'], $role); ?>><?php echo $details['name']; ?></option>
                                             <?php } ?>
                                         </select>
                                         <p class="description"><?php _e('このブログのフロントエンドにはどのユーザーの役割にアクセスできますか？管理者は常にアクセス権を持ちます。', $this->plugin_slug); ?></p>
@@ -206,20 +206,20 @@
                                     <th scope="row">
                                         <label for="options[design][bg_predefined]"><?php _e('背景を選択', $this->plugin_slug); ?></label>
                             <p class="description">
-                                * <?php echo sprintf(__('', $this->plugin_slug), 'http://designmodo.com/free-photos/' . WPMM_AUTHOR_UTM); ?>
+                                * <?php echo sprintf(__('', $this->plugin_slug), 'http://designmodo.com/free-photos/' . WPMP_AUTHOR_UTM); ?>
                             </p>
                             </th>
                             <td>	
                                 <ul class="bg_list">
                                     <?php
-                                    foreach (glob(WPMM_PATH . 'assets/images/backgrounds/*_thumb.jpg') as $filename) {
+                                    foreach (glob(WPMP_PATH . 'assets/images/backgrounds/*_thumb.jpg') as $filename) {
                                         $file_thumb = basename($filename);
                                         $file = str_replace('_thumb', '', $file_thumb);
                                         ?>
                                         <li class="<?php echo $this->plugin_settings['design']['bg_predefined'] == $file ? 'active' : ''; ?>">
                                             <label>
                                                 <input type="radio" value="<?php echo esc_attr($file); ?>" name="options[design][bg_predefined]" <?php checked($this->plugin_settings['design']['bg_predefined'], $file); ?>>
-                                                <img src="<?php echo WPMM_URL . 'assets/images/backgrounds/' . $file_thumb; ?>" width="200" height="150" />
+                                                <img src="<?php echo WPMP_URL . 'assets/images/backgrounds/' . $file_thumb; ?>" width="200" height="150" />
                                             </label>
                                         </li>
                                         <?php
@@ -307,7 +307,7 @@
                                     <th scope="row"><label for="options[modules][stats]"><?php _e('統計', $this->plugin_slug); ?></label></th>
                                     <td id="subscribers_wrap">	
                                         <?php
-                                        $subscribers_no = wpmm_count_where('wpmm_subscribers', 'id_subscriber');
+                                        $subscribers_no = wpmp_count_where('wpmp_subscribers', 'id_subscriber');
                                         echo sprintf(__('%d個の加入者があります', $this->plugin_slug), $subscribers_no);
 
                                         if ($subscribers_no > 0) {

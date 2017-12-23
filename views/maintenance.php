@@ -97,7 +97,7 @@
 
 							<p class="submit"><input type="submit" value="<?php _e('送信', $this->plugin_slug); ?>"></p>
 
-							<?php do_action('wpmm_contact_form_end'); ?>
+							<?php do_action('wpmp_contact_form_end'); ?>
 						</form>
 					</div>
 				</div>                
@@ -113,7 +113,7 @@
         </div>
 
         <script type='text/javascript'>
-			var wpmm_vars = {"ajax_url": "<?php echo admin_url('admin-ajax.php'); ?>"};
+			var wpmp_vars = {"ajax_url": "<?php echo admin_url('admin-ajax.php'); ?>"};
         </script>
 		<?php
 		if (!empty($scripts) && is_array($scripts)) {
@@ -126,7 +126,7 @@
 
 		// Do some actions
 		do_action('wm_footer'); // this hook will be removed in the next versions
-		do_action('wpmm_footer');
+		do_action('wpmp_footer');
 		?>
     </body>
 </html>

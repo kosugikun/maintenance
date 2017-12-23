@@ -41,7 +41,7 @@
                             <td width="100%">
                                 <table cellspacing="0" cellpadding="0" width="100%">
                                     <tbody>
-										<?php do_action('wpmm_contact_template_start'); ?>
+										<?php do_action('wpmp_contact_template_start'); ?>
 
                                         <tr>
                                             <td height="30"></td>
