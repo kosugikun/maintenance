@@ -80,7 +80,7 @@
                                     </td>
                                 </tr>   
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][redirection]"><?php _e('リダイレクション', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][redirection]"><?php _e('リダイレクション', 'wp-maintenance-page'); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['general']['redirection'])); ?>" name="options[general][redirection]" />
                                         <p class="description"><?php _e('ログイン後にユーザー（Dashboard / Backendにアクセスできない）をURL（WordPress Dashboard URLとは異なる）にリダイレクトする場合は、URL（http：//を含む）を定義する', 'wp-maintenance-page'); ?></p>
@@ -98,7 +98,7 @@
                                     </td>
                                 </tr>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[general][notice]"><?php _e('通知', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[general][notice]"><?php _e('通知', 'wp-maintenance-page'); ?></label></th>
                                     <td>	
                                         <select name="options[general][notice]">
                                             <option value="1" <?php selected($this->plugin_settings['general']['notice'], 1); ?>><?php _e('はい', 'wp-maintenance-page'); ?></option>
@@ -126,11 +126,11 @@
                         <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
 						<table class="table3" border=1>
  <th><h1>
-		プラグイン開発支援
+		<?php _e('プラグイン開発支援' 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		プラグイン開発の支援をお願いします。
-	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+		<?php _e('プラグイン開発の支援をお願いします。' 'wp-maintenance-page'); ?>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく' 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
@@ -341,7 +341,7 @@
                                             <option value="1" <?php selected($this->plugin_settings['modules']['social_target'], 1); ?>><?php _e('新しいページ', 'wp-maintenance-page'); ?></option>
                                             <option value="0" <?php selected($this->plugin_settings['modules']['social_target'], 0); ?>><?php _e('同じページ', 'wp-maintenance-page'); ?></option>
                                         </select>
-                                        <p class="description"><?php _e('リンクの開き方を選択します。', $this->plugin_slug); ?></p>
+                                        <p class="description"><?php _e('リンクの開き方を選択します。', 'wp-maintenance-page'); ?></p>
                                     </td>
                                 </tr>                                
                                 <tr valign="top">
@@ -394,7 +394,7 @@
                         <table class="form-table">
                             <tbody>
                                 <tr valign="top">
-                                    <th scope="row"><label for="options[modules][contact_status]"><?php _e('連絡先を表示しますか？', $this->plugin_slug); ?></label></th>
+                                    <th scope="row"><label for="options[modules][contact_status]"><?php _e('連絡先を表示しますか？', 'wp-maintenance-page'); ?></label></th>
                                     <td>	
                                         <select name="options[modules][contact_status]">
                                             <option value="1" <?php selected($this->plugin_settings['modules']['contact_status'], 1); ?>><?php _e('はい', 'wp-maintenance-page'); ?></option>
@@ -458,11 +458,11 @@
 </style>
 <table class="table3" border=1>
  <th><h1>
-		プラグイン開発支援
+		<?php _e('プラグイン開発支援' 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		プラグイン開発の支援をお願いします。
-	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+		<?php _e('プラグイン開発の支援をお願いします。' 'wp-maintenance-page'; ?>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく''wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
