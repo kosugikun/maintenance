@@ -7,7 +7,7 @@
  * @param string $plugin_slug
  * @return array
  */
-function wpmm_plugin_info($plugin_slug) {
+function wpmp_plugin_info($plugin_slug) {
 	add_filter('extra_plugin_headers', create_function('', 'return array("GitHub Plugin URI","Twitter");'));
 	$plugin_data = get_plugin_data(WPMP_PATH . $plugin_slug . '.php');
 
