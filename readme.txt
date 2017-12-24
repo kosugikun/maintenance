@@ -32,9 +32,6 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 = カスタマイズ可能ですか？ =
 カスタマイズ可能です。
 
-== Screenshots ==
-= 近日追加予定 =
-
 
 
 == Changelog ==
