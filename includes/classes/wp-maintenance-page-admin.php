@@ -118,7 +118,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('You do not have access to this resource.', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
 
                 // get subscribers and export
@@ -156,13 +156,13 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
 
                 // delete all subscribers
                 $wpdb->query("DELETE FROM {$wpdb->prefix}wpmp_subscribers");
 
-                wp_send_json_success(sprintf(__('%d個の加入者があります', $this->plugin_slug), 0));
+                wp_send_json_success(sprintf(__('%d個の加入者があります', 'wp-maintenance-page'), 0));
             } catch (Exception $ex) {
                 wp_send_json_error($ex->getMessage());
             }
@@ -178,7 +178,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
                 
                 // check nonce existence
