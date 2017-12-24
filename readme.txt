@@ -4,7 +4,7 @@ Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 3.3
 Tested up to: 4.9.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,12 +32,11 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 = カスタマイズ可能ですか？ =
 カスタマイズ可能です。
 
-== Screenshots ==
-= 近日追加予定 =
-
-
 
 == Changelog ==
+= 1.1.2 =
+バク修正
+
 
 = 1.1.1 =
 プラグインの仕様変更
