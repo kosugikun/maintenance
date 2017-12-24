@@ -35,8 +35,7 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 == Changelog ==
 = 1.1.2 =
-バク修正
-
+バクを修正しました。
 
 = 1.1.1 =
 プラグインの仕様変更
