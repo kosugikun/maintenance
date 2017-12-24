@@ -126,11 +126,11 @@
                         <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
 						<table class="table3" border=1>
  <th><h1>
-		<?php _e('プラグイン開発支援' 'wp-maintenance-page'); ?>
+		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		<?php _e('プラグイン開発の支援をお願いします。' 'wp-maintenance-page'); ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく' 'wp-maintenance-page'); ?></a></th>
+		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
@@ -458,11 +458,11 @@
 </style>
 <table class="table3" border=1>
  <th><h1>
-		<?php _e('プラグイン開発支援' 'wp-maintenance-page'); ?>
+		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		<?php _e('プラグイン開発の支援をお願いします。' 'wp-maintenance-page'; ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく''wp-maintenance-page'); ?></a></th>
+		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'; ?>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
