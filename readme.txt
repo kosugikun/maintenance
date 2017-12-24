@@ -33,7 +33,6 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 カスタマイズ可能です。
 
 
-
 == Changelog ==
 = 1.1.2 =
 バクを修正しました。
