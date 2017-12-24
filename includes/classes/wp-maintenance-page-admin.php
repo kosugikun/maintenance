@@ -118,7 +118,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('You do not have access to this resource.', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
 
                 // get subscribers and export
@@ -156,13 +156,13 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
 
                 // delete all subscribers
                 $wpdb->query("DELETE FROM {$wpdb->prefix}wpmp_subscribers");
 
-                wp_send_json_success(sprintf(__('%d個の加入者があります', $this->plugin_slug), 0));
+                wp_send_json_success(sprintf(__('%d個の加入者があります', 'wp-maintenance-page'), 0));
             } catch (Exception $ex) {
                 wp_send_json_error($ex->getMessage());
             }
@@ -178,33 +178,33 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
             try {
                 // check capabilities
                 if (!current_user_can('manage_options')) {
-                    throw new Exception(__('あなたはこのリソースにアクセスできません。', $this->plugin_slug));
+                    throw new Exception(__('あなたはこのリソースにアクセスできません。', 'wp-maintenance-page'));
                 }
                 
                 // check nonce existence
                 if (empty($_POST['_wpnonce'])) {
-                    throw new Exception(__('nonceフィールドは空であってはいけません。', $this->plugin_slug));
+                    throw new Exception(__('nonceフィールドは空であってはいけません。','wp-maintenance-page' );
                 }
                 
                 // check tab existence
                 if (empty($_POST['tab'])) {
-                    throw new Exception(__('タブスラッグは空であってはいけません。', $this->plugin_slug));
+                    throw new Exception(__('タブスラッグは空であってはいけません。', 'wp-maintenance-page'));
                 }
                 
                 // check nonce validation
                 if (!wp_verify_nonce($_POST['_wpnonce'], 'tab-' . $_POST['tab'])) {
-                   throw new Exception(__('セキュリティーチェック。', $this->plugin_slug));
+                   throw new Exception(__('セキュリティーチェック。', 'wp-maintenance-page'));
                 }
 
                 // check existence in plugin default settings
                 $tab = $_POST['tab'];
                 if (empty($this->plugin_default_settings[$tab])) {
-                    throw new Exception(__('タブスラッグが存在していなければなりません。', $this->plugin_slug));
+                    throw new Exception(__('タブスラッグが存在していなければなりません。', 'wp-maintenance-page'));
                 }
 
                 // update options using the default values
                 $this->plugin_settings[$tab] = $this->plugin_default_settings[$tab];
-                update_option('wpmp_settings', $this->plugin_settings);
+                update_option('wpmp_settings', 'wp-maintenance-page');
 
                 wp_send_json_success();
             } catch (Exception $ex) {
@@ -219,7 +219,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
          */
         public function add_plugin_menu() {
             $this->plugin_screen_hook_suffix = add_options_page(
-                    __('WP Maintenance page', $this->plugin_slug), __('WP Maintenance page', $this->plugin_slug), 'manage_options', $this->plugin_slug, array($this, 'display_plugin_settings')
+                    __('WP Maintenance page', 'wp-maintenance-page'), __('WP Maintenance-page', 'wp-maintenance-page'), 'manage_options', 'wp-maintenance-page', array($this, 'display_plugin_settings')
             );
         }
 
@@ -247,7 +247,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
         public function save_plugin_settings() {
             if (!empty($_POST) && !empty($_POST['tab'])) {
                 if (!wp_verify_nonce($_POST['_wpnonce'], 'tab-' . $_POST['tab'])) {
-                    die(__('セキュリティーチェック。', $this->plugin_slug));
+                    die(__('セキュリティーチェック。', 'wp-maintenance-page'));
                 }
 
                 // DO SOME SANITIZATIONS
@@ -452,7 +452,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
                 if ($this->plugin_settings['general']['status'] == 1 && $this->plugin_settings['general']['notice'] == 1) {
                     $notices['is_activated'] = array(
                         'class' => 'error',
-                        'msg' => sprintf(__('メンテナンスモードは<strong>アクティブ</strong>です。完了したらすぐに<a href="%s">無効にする</a>ことを忘れないようにしてください。', $this->plugin_slug), admin_url('options-general.php?page=' . $this->plugin_slug))
+                        'msg' => sprintf(__('メンテナンスモードは<strong>アクティブ</strong>です。完了したらすぐに<a href="%s">無効にする</a>ことを忘れないようにしてください。', 'wp-maintenance-page'), admin_url('options-general.php?page=' . $this->plugin_slug))
                     );
                 }
 
@@ -489,7 +489,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
         public function dismiss_notices() {
             try {
                 if (empty($_POST['notice_key'])) {
-                    throw new Exception(__('通知キーは空にすることはできません。', $this->plugin_slug));
+                    throw new Exception(__('通知キーは空にすることはできません。', 'wp-maintenance-page'));
                 }
 
                 // save new notice key

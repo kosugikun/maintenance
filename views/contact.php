@@ -31,7 +31,7 @@
                         </tr>
                         <tr>
                             <td style="color:#747e7e;font-family:Lato, Helvetica, Arial, sans-serif;text-align:center;font-size:18px;font-weight:normal;">
-								<?php printf(__('あなたは%s経由で連絡を受けています。', $this->plugin_slug), get_bloginfo('name')); ?>
+								<?php printf(__('あなたは%s経由で連絡を受けています。', 'wp-maintenance-page'), get_bloginfo('name')); ?>
                             </td>
                         </tr>
                         <tr>
@@ -49,7 +49,7 @@
                                         </tr>
                                         <tr>
                                             <td width="20%" style="border-bottom:1px solid #e3e5e5;padding:0 0 30px 20px;text-align:left;font-size:14px;font-family:Lato, Helvetica, Arial, sans-serif;color:#747e7e;font-weight:bold;">
-												<?php _e('Name:', $this->plugin_slug); ?>
+												<?php _e('Name:', 'wp-maintenance-page'); ?>
                                             </td>
                                             <td width="80%" style="border-bottom:1px solid #e3e5e5;padding:0 0 30px 20px;text-align:left;font-size:14px;font-family:Lato, Helvetica, Arial, sans-serif;color:#747e7e;">
 												<?php echo sanitize_text_field($_POST['name']); ?>
@@ -61,7 +61,7 @@
                                         </tr>
                                         <tr>
                                             <td width="20%" style="border-bottom:1px solid #e3e5e5;padding:0 0 30px 20px;text-align:left;font-size:14px;font-family:Lato, Helvetica, Arial, sans-serif;color:#747e7e;font-weight:bold;">
-												<?php _e('Email:', $this->plugin_slug); ?>
+												<?php _e('Email:', 'wp-maintenance-page'); ?>
                                             </td>
                                             <td width="80%" style="border-bottom:1px solid #e3e5e5;padding:0 0 30px 20px;text-align:left;font-size:14px;font-family:Lato, Helvetica, Arial, sans-serif;color:#747e7e;">
 												<?php echo sanitize_text_field($_POST['email']); ?>
@@ -76,7 +76,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2" style="padding:0 0 30px 20px;text-align:left;font-size:14px;font-family:Lato, Helvetica, Arial, sans-serif;color:#747e7e;font-weight:bold;">
-												<?php _e('Content:', $this->plugin_slug); ?>
+												<?php _e('Content:', 'wp-maintenance-page'); ?>
                                             </td>
                                         </tr> 
                                         <tr>
