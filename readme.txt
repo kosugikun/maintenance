@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-あなたのページがメンテナンス中であることを簡単に教えてください。
+あなたのページを簡単にメンテナンスモードににする事ができます。カスタマイズができ、あなたのお好みのメンテナンスページを作ることもできます。
 
 == Installation ==
 
