@@ -461,7 +461,7 @@
 		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'; ?>
+		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
 	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
