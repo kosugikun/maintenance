@@ -237,11 +237,11 @@
                         <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="design" name="submit">
 						<table class="table3" border=1>
  <th><h1>
-		プラグイン開発支援
+		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
 	<p>
-		プラグイン開発の支援をお願いします。
-	</p><a href='https://mcpenano.net/donation/'>支援ページへいく</a></th>
+		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページに行く', 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
