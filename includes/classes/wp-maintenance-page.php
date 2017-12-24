@@ -98,10 +98,10 @@ if (!class_exists('WP_Maintenance_page')) {
 					'admin_link' => 0
 				),
 				'design' => array(
-					'title' => __('Maintenance page', $this->plugin_slug),
-					'heading' => __('Maintenance page', $this->plugin_slug),
+					'title' => __('Maintenance page', 'wp-maintenance-page'),
+					'heading' => __('Maintenance page', 'wp-maintenance-page'),
 					'heading_color' => '',
-					'text' => __('<p>ご不便をおかけして申し訳ございません。<br />当ウェブサイトは現在、定期的なメンテナンスを行っています。<br />ご理解いただきありがとうございます。</p>', $this->plugin_slug),
+					'text' => __('<p>ご不便をおかけして申し訳ございません。<br />当ウェブサイトは現在、定期的なメンテナンスを行っています。<br />ご理解いただきありがとうございます。</p>', 'wp-maintenance-page'),
 					'text_color' => '',
 					'bg_type' => 'color',
 					'bg_color' => '',
@@ -119,7 +119,7 @@ if (!class_exists('WP_Maintenance_page')) {
 					),
 					'countdown_color' => '',
 					'subscribe_status' => 0,
-					'subscribe_text' => __('Notify me when it\'s ready', $this->plugin_slug),
+					'subscribe_text' => __('Notify me when it\'s ready', 'wp-maintenance-page'),
 					'subscribe_text_color' => '',
 					'social_status' => 0,
 					'social_target' => 1,
