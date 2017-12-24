@@ -183,7 +183,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
                 
                 // check nonce existence
                 if (empty($_POST['_wpnonce'])) {
-                    throw new Exception(__('nonceフィールドは空であってはいけません。','wp-maintenance-page' );
+                    throw new Exception(__('nonceフィールドは空であってはいけません。','wp-maintenance-page' ));
                 }
                 
                 // check tab existence
