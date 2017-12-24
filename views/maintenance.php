@@ -41,8 +41,8 @@
 				<?php if (!empty($this->plugin_settings['modules']['subscribe_text'])) { ?><h3><?php echo stripslashes($this->plugin_settings['modules']['subscribe_text']); ?></h3><?php } ?>
 				<div class="subscribe_wrapper" style="min-height: 100px;">
 					<form class="subscribe_form">
-						<input type="text" placeholder="<?php _e('あなたのEメール...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
-						<input type="submit" value="<?php _e('申し込む', $this->plugin_slug); ?>" />
+						<input type="text" placeholder="<?php _e('あなたのEメール...', 'wp-maintenance-page'); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
+						<input type="submit" value="<?php _e('申し込む', 'wp-maintenance-page'); ?>" />
 					</form>
 				</div>
 			<?php } ?>
@@ -85,17 +85,17 @@
 						<form class="contact_form">
 							<?php do_action('wpmp_contact_form_start'); ?>
 
-							<p class="col"><input type="text" placeholder="<?php _e('名前', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" name="name" class="name_input" /></p>
-							<p class="col last"><input type="text" placeholder="<?php _e('Eメール', $this->plugin_slug); ?>" data-rule-required="true" data-rule-email="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" data-msg-email="<?php esc_attr_e('Please enter a valid email address.', $this->plugin_slug); ?>" name="email" class="email_input" /></p>
+							<p class="col"><input type="text" placeholder="<?php _e('名前', 'wp-maintenance-page'); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" name="name" class="name_input" /></p>
+							<p class="col last"><input type="text" placeholder="<?php _e('Eメール', 'wp-maintenance-page'); ?>" data-rule-required="true" data-rule-email="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" data-msg-email="<?php esc_attr_e('Please enter a valid email address.', $this->plugin_slug); ?>" name="email" class="email_input" /></p>
 							<br clear="all" />
 
 							<?php do_action('wpmp_contact_form_before_message'); ?>
 
-							<p><textarea placeholder="<?php _e('あなたのメッセージ', $this->plugin_slug); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" name="content" class="content_textarea"></textarea></p>
+							<p><textarea placeholder="<?php _e('あなたのメッセージ', 'wp-maintenance-page'); ?>" data-rule-required="true" data-msg-required="<?php esc_attr_e('この項目は必須です。', 'wp-maintenance-page'); ?>" name="content" class="content_textarea"></textarea></p>
 
 							<?php do_action('wpmp_contact_form_after_message'); ?>
 
-							<p class="submit"><input type="submit" value="<?php _e('送信', $this->plugin_slug); ?>"></p>
+							<p class="submit"><input type="submit" value="<?php _e('送信', 'wp-maintenance-page'); ?>"></p>
 
 							<?php do_action('wpmp_contact_form_end'); ?>
 						</form>
