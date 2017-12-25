@@ -219,7 +219,7 @@ if (!class_exists('WP_Maintenance_page_Admin')) {
          */
         public function add_plugin_menu() {
             $this->plugin_screen_hook_suffix = add_options_page(
-                    __('WP Maintenance page', 'wp-maintenance-page'), __('WP Maintenance-page', 'wp-maintenance-page'), 'manage_options', 'wp-maintenance-page', array($this, 'display_plugin_settings')
+                    __('WP Maintenance page', 'wp-maintenance-page'), __('WP Maintenance page', 'wp-maintenance-page'), 'manage_options', 'wp-maintenance-page', array($this, 'display_plugin_settings')
             );
         }
 
