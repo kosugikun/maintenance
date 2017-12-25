@@ -123,8 +123,7 @@
                         <?php wp_nonce_field('tab-general'); ?>
                         <input type="hidden" value="general" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', 'wp-maintenance-page'); ?>" class="button button-primary" name="submit" />
-                        <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="general" name="submit">
-						<table class="table3" border=1>
+                         		<table class="table3" border=1>
  <th><h1>
 		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
@@ -234,8 +233,7 @@
                         <?php wp_nonce_field('tab-design'); ?>
                         <input type="hidden" value="design" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', 'wp-maintenance-page'); ?>" class="button button-primary" name="submit">
-                        <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="design" name="submit">
-						<table class="table3" border=1>
+                        		<table class="table3" border=1>
  <th><h1>
 		<?php _e('プラグイン開発支援', 'wp-maintenance-page'); ?>
 	</h1>
@@ -447,8 +445,7 @@
                         <?php wp_nonce_field('tab-modules'); ?>
                         <input type="hidden" value="modules" name="tab" />
                         <input type="submit" value="<?php _e('設定を保存', 'wp-maintenance-page'); ?>" class="button button-primary" name="submit">
-                        <input type="button" value="<?php _e('設定をリセット', 'wp-maintenance-page'); ?>" class="button button-secondary reset_settings" data-tab="modules" name="submit">
-						<style type="text/css">
+                        	<style type="text/css">
 .table3 {
   border-collapse: collapse;
 }
