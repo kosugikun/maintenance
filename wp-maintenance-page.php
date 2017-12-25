@@ -6,7 +6,7 @@
  * Plugin Name: WP Maintenance page
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページを簡単にメンテナンスモードににする事ができます。カスタマイズができ、あなたのお好みのメンテナンスページを作ることもできます。
- * Version: 1.2.0_beta.10
+ * Version: 1.2.1
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kun
@@ -38,7 +38,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'wp-maintenance-page'
 );
 //Optional: Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('master','beat');
+$myUpdateChecker->setBranch('master');
 
 
 // Exit if accessed directly
