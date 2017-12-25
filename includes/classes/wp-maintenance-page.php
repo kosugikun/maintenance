@@ -258,7 +258,7 @@ if (!class_exists('WP_Maintenance_page')) {
 			if (!empty($old_options) && empty($v2_options)) {
 				add_option('wpmp_notice', array(
 					'class' => 'updated notice',
-					'msg' => sprintf(__('WPメンテナンスプラグインが再起動されたので、<a href="%s">設定</a>を改訂する必要があります。', self::get_instance()->plugin_slug), admin_url('options-general.php?page=' . self::get_instance()->plugin_slug))
+					'msg' => sprintf(__('WPメンテナンスプラグインが再起動されたので、<a href="%s">設定</a>を改訂する必要があります。', 'wp-maintenance-page'), admin_url('options-general.php?page=' . self::get_instance()->plugin_slug))
 				));
 
 				// import old options
@@ -727,7 +727,7 @@ if (!class_exists('WP_Maintenance_page')) {
 
 				// checks
 				if (empty($_POST['email']) || !is_email($_POST['email'])) {
-					throw new Exception(__('有効なメールアドレスを入力してください。', $this->plugin_slug));
+					throw new Exception(__('有効なメールアドレスを入力してください。', 'wp-maintenance-page'));
 				}
 
 				// save
@@ -739,7 +739,7 @@ if (!class_exists('WP_Maintenance_page')) {
 							), array('%s', '%s'));
 				}
 
-				wp_send_json_success(__('あなたは正常に購読しました。ありがとう！', $this->plugin_slug));
+				wp_send_json_success(__('あなたは正常に購読しました。ありがとう！', 'wp-maintenance-page'));
 			} catch (Exception $ex) {
 				wp_send_json_error($ex->getMessage());
 			}
@@ -757,11 +757,11 @@ if (!class_exists('WP_Maintenance_page')) {
 
 				// checks
 				if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['content'])) {
-					throw new Exception(__('すべてのフィールドが必要。', $this->plugin_slug));
+					throw new Exception(__('すべてのフィールドが必要。', 'wp-maintenance-page'));
 				}
 
 				if (!is_email($_POST['email'])) {
-					throw new Exception(__('有効なメールアドレスを入力してください。', $this->plugin_slug));
+					throw new Exception(__('有効なメールアドレスを入力してください。', 'wp-maintenance-page'));
 				}
 				
 				// if you add new fields to the contact form... you will definitely need to validate their values
@@ -769,7 +769,7 @@ if (!class_exists('WP_Maintenance_page')) {
 
 				// vars
 				$send_to = !empty($this->plugin_settings['modules']['contact_email']) ? stripslashes($this->plugin_settings['modules']['contact_email']) : get_option('admin_email');
-				$subject = apply_filters('wpmp_contact_subject', __('Message via contact', $this->plugin_slug));
+				$subject = apply_filters('wpmp_contact_subject', __('Message via contact', 'wp-maintenance-page'));
 				$headers = apply_filters('wpmp_contact_headers', array('Reply-To: ' . sanitize_text_field($_POST['email'])));
 				$template_path = apply_filters('wpmp_contact_template', WPMP_VIEWS_PATH . 'contact.php');
 
@@ -783,7 +783,7 @@ if (!class_exists('WP_Maintenance_page')) {
 
 				// send email
 				@wp_mail($send_to, $subject, $message, $headers);
-				wp_send_json_success(__('あなたの電子メールは、Webサイト管理者に送信されました。ありがとう！', $this->plugin_slug));
+				wp_send_json_success(__('あなたの電子メールは、Webサイト管理者に送信されました。ありがとう！', 'wp-maintenance-page'));
 			} catch (Exception $ex) {
 				wp_send_json_error($ex->getMessage());
 			}

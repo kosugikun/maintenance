@@ -4,7 +4,7 @@ Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 3.3
 Tested up to: 4.9.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,13 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.2.1 =
+<ui>
+<li>プラグイン内テキストを修正</li>
+<li>翻訳できるプラグイン内テキストを増やしました。</li>
+<li>細かな修正を行いました。</li>
+</ui>
+
 = 1.2.0 =
 翻訳に対応しましま。
 英語訳を追加しました。
