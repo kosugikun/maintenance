@@ -38,7 +38,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'wp-maintenance-page'
 );
 //Optional: Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('master');
+$myUpdateChecker->setBranch('master','beat');
 
 
 // Exit if accessed directly
