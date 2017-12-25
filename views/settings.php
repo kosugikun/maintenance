@@ -76,7 +76,7 @@
                                             <option value="1" <?php selected($this->plugin_settings['general']['meta_robots'], 1); ?>>noindex, nofollow</option>
                                             <option value="0" <?php selected($this->plugin_settings['general']['meta_robots'], 0); ?>>index, follow</option>
                                         </select>
-                                        <p class="description"><?php _e('robotsメタタグを使用すると、個別のページ固有のアプローチを使用して、個々のページのインデックスを作成し、検索結果でユーザーに提供する方法を制御できます。', 'wp-maintenance-page'); ?></p>
+                                        <p class="description"><?php _e('robotsメタタグを使用すると 個別のページ固有のアプローチを使用して 個々のページのインデックスを作成し 検索結果でユーザーに提供する方法を制御できます', 'wp-maintenance-page'); ?></p>
                                     </td>
                                 </tr>   
                                 <tr valign="top">
