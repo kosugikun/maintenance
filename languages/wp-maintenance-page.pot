@@ -3,16 +3,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-25 00:31+0000\n"
+"POT-Creation-Date: 2017-12-25 03:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/"
 
 #: views/contact.php:34
 #, php-format
@@ -124,14 +124,14 @@ msgid "検索ボットのバイパス"
 msgstr ""
 
 #: views/settings.php:34 views/settings.php:104 views/settings.php:114
-#: views/settings.php:258 views/settings.php:294 views/settings.php:332
-#: views/settings.php:400 views/settings.php:432
+#: views/settings.php:256 views/settings.php:292 views/settings.php:330
+#: views/settings.php:398 views/settings.php:430
 msgid "はい"
 msgstr ""
 
 #: views/settings.php:35 views/settings.php:105 views/settings.php:115
-#: views/settings.php:259 views/settings.php:295 views/settings.php:333
-#: views/settings.php:401 views/settings.php:433
+#: views/settings.php:257 views/settings.php:293 views/settings.php:331
+#: views/settings.php:399 views/settings.php:431
 msgid "いいえ"
 msgstr ""
 
@@ -159,9 +159,7 @@ msgstr ""
 msgid "ロボットのメタタグ"
 msgstr ""
 
-#: views/settings.php:79
-
-#: views/settings.php:83
+#: views/settings.php:79 views/settings.php:83
 msgid "リダイレクション"
 msgstr ""
 
@@ -195,188 +193,184 @@ msgstr ""
 msgid "メンテナンスモードのページでダッシュボードへのリンクを追加しますか？"
 msgstr ""
 
-#: views/settings.php:125 views/settings.php:236 views/settings.php:449
+#: views/settings.php:125 views/settings.php:235 views/settings.php:447
 msgid "設定を保存"
 msgstr ""
 
-#: views/settings.php:126 views/settings.php:237 views/settings.php:450
-msgid "設定をリセット"
-msgstr ""
-
-#: views/settings.php:129 views/settings.php:240 views/settings.php:461
+#: views/settings.php:128 views/settings.php:238 views/settings.php:458
 msgid "プラグイン開発支援"
 msgstr ""
 
-#: views/settings.php:132 views/settings.php:243 views/settings.php:464
+#: views/settings.php:131 views/settings.php:241 views/settings.php:461
 msgid "プラグイン開発の支援をお願いします。"
 msgstr ""
 
-#: views/settings.php:133 views/settings.php:465
+#: views/settings.php:132 views/settings.php:462
 msgid "支援ページへいく"
 msgstr ""
 
-#: views/settings.php:139
+#: views/settings.php:138
 msgid "コンテンツ"
 msgstr ""
 
-#: views/settings.php:144
+#: views/settings.php:143
 msgid "タイトル（HTMLタグ）"
 msgstr ""
 
-#: views/settings.php:150
+#: views/settings.php:149
 msgid "見出し"
 msgstr ""
 
-#: views/settings.php:157
+#: views/settings.php:156
 msgid "本文"
 msgstr ""
 
-#: views/settings.php:177
+#: views/settings.php:176
 msgid "バックグラウンド"
 msgstr ""
 
-#: views/settings.php:182
+#: views/settings.php:181
 msgid "タイプを選択"
 msgstr ""
 
-#: views/settings.php:185
+#: views/settings.php:184
 msgid "カスタムカラー"
 msgstr ""
 
-#: views/settings.php:186
+#: views/settings.php:185
 msgid "アップロードされた背景"
 msgstr ""
 
-#: views/settings.php:187
+#: views/settings.php:186
 msgid "設定済みの背景"
 msgstr ""
 
-#: views/settings.php:192
+#: views/settings.php:191
 msgid "色を選択"
 msgstr ""
 
-#: views/settings.php:198
+#: views/settings.php:197
 msgid "背景をアップロード"
 msgstr ""
 
-#: views/settings.php:202
+#: views/settings.php:201
 msgid "背景には1920x1280ピクセルのサイズが必要です。"
 msgstr ""
 
-#: views/settings.php:207
+#: views/settings.php:206
 msgid "背景を選択"
 msgstr ""
 
-#: views/settings.php:244
+#: views/settings.php:242
 msgid "支援ページに行く"
 msgstr ""
 
-#: views/settings.php:250
+#: views/settings.php:248
 msgid "カウントダウン"
 msgstr ""
 
-#: views/settings.php:255
+#: views/settings.php:253
 msgid "カウントダウンを表示しますか？"
 msgstr ""
 
-#: views/settings.php:264
+#: views/settings.php:262
 msgid "開始日"
 msgstr ""
 
-#: views/settings.php:270
+#: views/settings.php:268
 msgid "カウントダウン（残り時間）"
 msgstr ""
 
-#: views/settings.php:278
+#: views/settings.php:276
 msgid "色"
 msgstr ""
 
-#: views/settings.php:291
+#: views/settings.php:289
 msgid "購読を表示しますか？"
 msgstr ""
 
-#: views/settings.php:300
+#: views/settings.php:298
 msgid "テキスト"
 msgstr ""
 
-#: views/settings.php:307
+#: views/settings.php:305
 msgid "統計"
 msgstr ""
 
-#: views/settings.php:311 includes/classes/wp-maintenance-page-admin.php:165
+#: views/settings.php:309 includes/classes/wp-maintenance-page-admin.php:165
 #, php-format
 msgid "%d個の加入者があります"
 msgstr ""
 
-#: views/settings.php:316
+#: views/settings.php:314
 msgid "CSVとしてエクスポート"
 msgstr ""
 
-#: views/settings.php:317
+#: views/settings.php:315
 msgid "空の加入者リスト"
 msgstr ""
 
-#: views/settings.php:324
+#: views/settings.php:322
 msgid "ソーシャルネットワーク"
 msgstr ""
 
-#: views/settings.php:329
+#: views/settings.php:327
 msgid "ソーシャルネットワークを表示しますか？"
 msgstr ""
 
-#: views/settings.php:338
+#: views/settings.php:336
 msgid "リンク先は？"
 msgstr ""
 
-#: views/settings.php:341
+#: views/settings.php:339
 msgid "新しいページ"
 msgstr ""
 
-#: views/settings.php:342
+#: views/settings.php:340
 msgid "同じページ"
 msgstr ""
 
-#: views/settings.php:344
+#: views/settings.php:342
 msgid "リンクの開き方を選択します。"
 msgstr ""
 
-#: views/settings.php:397
+#: views/settings.php:395
 msgid "連絡先を表示しますか？"
 msgstr ""
 
-#: views/settings.php:406
+#: views/settings.php:404
 msgid "Eメールアドレス"
 msgstr ""
 
-#: views/settings.php:412
+#: views/settings.php:410
 msgid "エフェクト"
 msgstr ""
 
-#: views/settings.php:415
+#: views/settings.php:413
 msgid "上に移動 - 下に移動"
 msgstr ""
 
-#: views/settings.php:416
+#: views/settings.php:414
 msgid "ズーム - ズーム"
 msgstr ""
 
-#: views/settings.php:417
+#: views/settings.php:415
 msgid "折りたたみ - 展開"
 msgstr ""
 
-#: views/settings.php:424
+#: views/settings.php:422
 msgid "Google Analytics"
 msgstr ""
 
-#: views/settings.php:429
+#: views/settings.php:427
 msgid "Google Analyticsを使用しますか？"
 msgstr ""
 
-#: views/settings.php:438
+#: views/settings.php:436
 msgid "トラッキングコード"
 msgstr ""
 
-#: views/settings.php:441
+#: views/settings.php:439
 msgid "使用できるフォーマット： UA-XXXXXXXX, UA-XXXXXXXX-XXXX. 例：UA-12345678-1などが有効です"
 msgstr ""
 
@@ -449,4 +443,23 @@ msgstr ""
 
 #. Author of the plugin
 msgid "Kosugi_kun"
+msgstr ""
+
+msgid "フロントエンドの役割"
+msgstr ""
+
+msgid "日"
+msgstr ""
+
+msgid "時間"
+msgstr ""
+
+msgid "分"
+msgstr ""
+
+msgid "購読"
+msgstr ""
+
+
+msgid "robotsメタタグを使用すると 個別のページ固有のアプローチを使用して 個々のページのインデックスを作成し 検索結果でユーザーに提供する方法を制御できます"
 msgstr ""
