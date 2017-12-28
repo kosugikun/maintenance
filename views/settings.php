@@ -13,6 +13,7 @@
                 <a class="nav-tab nav-tab-active" href="#general"><?php _e('一般', 'wp-maintenance-page'); ?></a>
                 <a class="nav-tab" href="#design"><?php _e('設計', 'wp-maintenance-page'); ?></a>
                 <a class="nav-tab" href="#modules"><?php _e('モジュール', 'wp-maintenance-page'); ?></a>
+				<a class="nav-tab" href="#about"><?php _e('プラグイン詳細', 'wp-maintenance-page'); ?></a>
             </div>
 
             <div class="tabs-content">
@@ -463,6 +464,16 @@
 </table>
                     </form>
                 </div>
+				<div id="tab-about" class="hidden">
+					<form method="post">
+						<h1>プラグイン詳細</h1>
+						<table class="form-table">
+                            <tbody>
+                                <tr valign="top">
+									<th><?php _e('プラグインバージョン', 'wp-maintenance-page'); ?></th>
+									<td><?php _e('WP Maintenance page', 'wp-maintenance-page'); ?>
+								</tr>
+						
             </div>
         </div>
 
