@@ -1,6 +1,6 @@
 World Pressプラグイン、Webページの開発のために寄付・開発支援をお願いします。
 <h2>Amazonギフト券</h2>
-<a href="https://www.amazon.co.jp/gp/product/BT00DHI8G4"><img class="aligncenter size-full wp-image-1086" src="//mcpenano.net/wp-content/uploads/2017/09/38DC76F0-2BFB-4984-9AD7-FED624032921.png" alt="" width="583" height="300" /></a>
+
 
 <a href="http://amzn.to/2heM4QH" target="_blank" rel="noopener">Amazonギフト券(Eメールタイプ)</a>
 
