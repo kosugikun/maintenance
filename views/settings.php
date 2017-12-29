@@ -13,6 +13,7 @@
                 <a class="nav-tab nav-tab-active" href="#general"><?php _e('一般', 'wp-maintenance-page'); ?></a>
                 <a class="nav-tab" href="#design"><?php _e('設計', 'wp-maintenance-page'); ?></a>
                 <a class="nav-tab" href="#modules"><?php _e('モジュール', 'wp-maintenance-page'); ?></a>
+				<a class="nav-tab" href="#about"><?php _e('プラグイン詳細', 'wp-maintenance-page'); ?></a>
             </div>
 
             <div class="tabs-content">
@@ -463,6 +464,64 @@
 </table>
                     </form>
                 </div>
+				<div id="tab-about" class="hidden">
+					<form method="post">
+						<h1>プラグイン詳細</h1>
+						<table class="form-table">
+                            <tbody>
+                                <tr valign="top">
+									<th><?php _e('プラグインバージョン', 'wp-maintenance-page'); ?></th>
+									<td>
+			<?php $plugin_data = wpmp_plugin_info($this->plugin_slug); ?>
+            <ul>
+                <li><?php _e('Name', $this->plugin_slug); ?>: 
+					<?php
+					echo!empty($plugin_data['Name']) ? $plugin_data['Name'] : '';
+					echo!empty($plugin_data['Version']) ? ' v' . $plugin_data['Version'] : '';
+					?>
+                </li>
+                <li><?php _e('Author', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorName']) ? $plugin_data['AuthorName'] : ''; ?></li>
+                <li><?php _e('Website', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorURI']) ? '<a href="' . $plugin_data['AuthorURI'] . WPMP_AUTHOR_UTM . '" target="_blank">' . $plugin_data['AuthorName'] . '</a>' : ''; ?></li>
+                <li><?php _e('Twitter', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['Twitter']) ? '<a href="http://twitter.com/' . $plugin_data['Twitter'] . '" target="_blank">@' . $plugin_data['Twitter'] . '</a>' : ''; ?></li>
+                <li><?php _e('GitHub', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['GitHub Plugin URI']) ? '<a href="' . $plugin_data['GitHub Plugin URI'] . '" target="_blank">' . basename($plugin_data['GitHub Plugin URI']) . '</a>' : ''; ?></li>
+				</ul>
+							</td>
+								</tr>
+							</tbody>
+						</table>
+					<div class="box30">
+    <div class="box-title">お知らせ</div>
+<div align="center"><?php 
+	readfile ("http://kosugikun.php.xdomain.jp/WPplugin.php");       
+	//　HTMLファイル読み込み
+ ?>
+					</div>
+					</div>
+					</form>
+					<style>
+					.box30 {
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+	max-width: 650px;
+}
+.box30 .box-title {
+    font-size: 1.2em;
+	max-width: 650px;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.box30 p {
+    padding: 15px 20px;
+    margin: 0;
+	max-width: 650px;
+}
+					</style>
+				</div>
             </div>
         </div>
 

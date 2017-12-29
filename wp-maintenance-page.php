@@ -1,22 +1,22 @@
 <?php
 
 /**
- * Maintenance
+ * Wp Maintenance page
  *
  * Plugin Name: WP Maintenance page
  * Plugin URI: https://mcpenano.net
  * Description: あなたのページを簡単にメンテナンスモードににする事ができます。カスタマイズができ、あなたのお好みのメンテナンスページを作ることもできます。
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Kosugi_kun
  * Author URI: https://mcpenano.net
  * Twitter: kosugi_kun
- * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance/
+ * GitHub Plugin URI: https://github.com/kosugikun/wp-maintenance-page/
  * GitHub Branch: master
  * Text Domain: wp-maintenance-page
  * License: GPL2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
-/*  Copyright 2017 Kosugikun (email : info@mcpenano.net)
+/*  Copyright 2017 Kosugi_kun (email : info@mcpenano.net)
  
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
