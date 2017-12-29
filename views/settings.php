@@ -486,27 +486,26 @@
                 <li><?php _e('GitHub', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['GitHub Plugin URI']) ? '<a href="' . $plugin_data['GitHub Plugin URI'] . '" target="_blank">' . basename($plugin_data['GitHub Plugin URI']) . '</a>' : ''; ?></li>
 				</ul>
 							</td>
-									<hr>
-				<td>
+								</tr>
+							</tbody>
+						</table>
 					<div class="box30">
     <div class="box-title">お知らせ</div>
 <div align="center"><?php readfile ("http://kosugikun.html.xdomain.jp/WPplug.html");        //　HTMLファイル読み込み
 ?>
 					</div>
 					</div>
-				</td>
-								</tr>
-							</tbody>
-						</table>
 					</form>
 					<style>
 					.box30 {
     margin: 2em 0;
     background: #f1f1f1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+	max-width: 650px;
 }
 .box30 .box-title {
     font-size: 1.2em;
+	max-width: 650px;
     background: #5fc2f5;
     padding: 4px;
     text-align: center;
@@ -517,6 +516,7 @@
 .box30 p {
     padding: 15px 20px;
     margin: 0;
+	max-width: 650px;
 }
 					</style>
 				</div>
