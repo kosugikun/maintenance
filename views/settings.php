@@ -486,6 +486,7 @@
                 <li><?php _e('GitHub', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['GitHub Plugin URI']) ? '<a href="' . $plugin_data['GitHub Plugin URI'] . '" target="_blank">' . basename($plugin_data['GitHub Plugin URI']) . '</a>' : ''; ?></li>
 				</ul>
 							</td>
+									<hr>
 				<td>
 					<div class="box30">
     <div class="box-title">お知らせ</div>
