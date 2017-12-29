@@ -488,7 +488,7 @@
 							</td>
 				<td>
 					<?php
-    include("#");        //　HTMLファイル読み込み
+    include("http://kosugikun.html.xdomain.jp/WPplug.html");        //　HTMLファイル読み込み
 ?>
 				</td>
 								</tr>
