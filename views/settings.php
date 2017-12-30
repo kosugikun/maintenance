@@ -491,7 +491,9 @@
 						</table>
 					<div class="box30">
     <div class="box-title">お知らせ</div>
-<div align="center"><?php 
+<div align="center">
+<?php require_once 'c.php' ?>
+	<?php 
 	readfile ("http://kosugikun.php.xdomain.jp/WPplugin.php");       
 	//　HTMLファイル読み込み
  ?>
