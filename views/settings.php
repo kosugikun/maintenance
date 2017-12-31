@@ -1,4 +1,5 @@
-<div class="wrap">
+ <div class="wrap">
+
     <h2 class="wpmp-title"><?php echo get_admin_page_title(); ?></h2>
 
     <?php if (!empty($_POST)) { ?>
@@ -132,6 +133,7 @@
 		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
 	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
+						<span id="view_clock"></span>
                     </form>
                 </div>
                 <div id="tab-design" class="hidden">
@@ -240,7 +242,8 @@
 	</h1>
 	<p>
 		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページに行く', 'wp-maintenance-page'); ?></a></th>
+	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページに行く', 'wp-maintenance-page'); ?></a>
+									</th>
 </table>
                     </form>
                 </div>
@@ -260,6 +263,28 @@
                                     </td>
                                 </tr>   
                                 <tr valign="top">
+									<script type="text/javascript">
+function set2fig(num) {
+   // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+   var ret;
+   if( num < 10 ) { ret = "0" + num; }
+   else { ret = num; }
+   return ret;
+}
+function nowTime1() {
+   var nowTime = new Date();
+	var year = set2fig( nowTime.getFullYear() );
+	var mon = set2fig( nowTime.getMonth()+1); //１を足すこと
+	var day = ( nowTime.getDate() );
+   var nowHour = set2fig( nowTime.getHours() );
+   var nowMin  = set2fig( nowTime.getMinutes() );
+   var nowSec  = set2fig( nowTime.getSeconds() );
+   var msg = "現在日時は、" + year + "年" + mon + "月" + day + "日" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+   document.getElementById("nowTime1").innerHTML = msg;
+}
+setInterval('nowTime1()',1000);
+</script>
+									<p><b id="nowTime1"> </b></p>
                                     <th scope="row"><label for="options[modules][countdown_start]"><?php _e('開始日', 'wp-maintenance-page'); ?></label></th>
                                     <td>	
                                         <input type="text" value="<?php echo esc_attr(stripslashes($this->plugin_settings['modules']['countdown_start'])); ?>" name="options[modules][countdown_start]" class="countdown_start" />
@@ -482,7 +507,7 @@
                 </li>
                 <li><?php _e('Author', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorName']) ? $plugin_data['AuthorName'] : ''; ?></li>
                 <li><?php _e('Website', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorURI']) ? '<a href="' . $plugin_data['AuthorURI'] . WPMP_AUTHOR_UTM . '" target="_blank">' . $plugin_data['AuthorName'] . '</a>' : ''; ?></li>
-                <li><?php _e('Twitter', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['Twitter']) ? '<a href="http://twitter.com/' . $plugin_data['Twitter'] . '" target="_blank">@' . $plugin_data['Twitter'] . '</a>' : ''; ?></li>
+                <li><?php _e('Twitter', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['Twitter']) ? '<a href="https://twitter.com/' . $plugin_data['Twitter'] . '" target="_blank">@' . $plugin_data['Twitter'] . '</a>' : ''; ?></li>
                 <li><?php _e('GitHub', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['GitHub Plugin URI']) ? '<a href="' . $plugin_data['GitHub Plugin URI'] . '" target="_blank">' . basename($plugin_data['GitHub Plugin URI']) . '</a>' : ''; ?></li>
 				</ul>
 							</td>
@@ -491,8 +516,9 @@
 						</table>
 					<div class="box30">
     <div class="box-title">お知らせ</div>
-<div align="center"><?php 
-	readfile ("http://kosugikun.php.xdomain.jp/WPplugin.php");       
+<div align="center">
+	<?php 
+	readfile ("https://mcpenano.net/plug/WPplugin.php");       
 	//　HTMLファイル読み込み
  ?>
 					</div>
@@ -524,7 +550,5 @@
 				</div>
             </div>
         </div>
-
-        <?php include_once('sidebar.php'); ?>
     </div>
 </div>
