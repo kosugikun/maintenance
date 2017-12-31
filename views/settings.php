@@ -550,7 +550,5 @@ setInterval('nowTime1()',1000);
 				</div>
             </div>
         </div>
-
-        <?php include_once('sidebar.php'); ?>
     </div>
 </div>
