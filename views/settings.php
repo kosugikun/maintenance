@@ -507,7 +507,7 @@ setInterval('nowTime1()',1000);
                 </li>
                 <li><?php _e('Author', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorName']) ? $plugin_data['AuthorName'] : ''; ?></li>
                 <li><?php _e('Website', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['AuthorURI']) ? '<a href="' . $plugin_data['AuthorURI'] . WPMP_AUTHOR_UTM . '" target="_blank">' . $plugin_data['AuthorName'] . '</a>' : ''; ?></li>
-                <li><?php _e('Twitter', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['Twitter']) ? '<a href="http://twitter.com/' . $plugin_data['Twitter'] . '" target="_blank">@' . $plugin_data['Twitter'] . '</a>' : ''; ?></li>
+                <li><?php _e('Twitter', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['Twitter']) ? '<a href="https://twitter.com/' . $plugin_data['Twitter'] . '" target="_blank">@' . $plugin_data['Twitter'] . '</a>' : ''; ?></li>
                 <li><?php _e('GitHub', $this->plugin_slug); ?>: <?php echo!empty($plugin_data['GitHub Plugin URI']) ? '<a href="' . $plugin_data['GitHub Plugin URI'] . '" target="_blank">' . basename($plugin_data['GitHub Plugin URI']) . '</a>' : ''; ?></li>
 				</ul>
 							</td>
@@ -518,7 +518,7 @@ setInterval('nowTime1()',1000);
     <div class="box-title">お知らせ</div>
 <div align="center">
 	<?php 
-	readfile ("http://kosugikun.php.xdomain.jp/WPplugin.php");       
+	readfile ("https://mcpenano.net/plug/WPplugin.php");       
 	//　HTMLファイル読み込み
  ?>
 					</div>
