@@ -4,7 +4,7 @@ Donate link: https://mcpenano.net/donation/
 Tags: maintenance
 Requires at least: 3.3
 Tested up to: 4.9.1
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,11 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.2.4 =
+*細かな修正を行いました
+*お知らせを管理しているサーバーを移管しました。
+*セキュリティー強化
+
 = 1.2.3 =
 <ui>
 <li>カウントダウン設定の上にリアルタイムに時間が表示されるようになりました。</li>
