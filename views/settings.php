@@ -518,7 +518,7 @@ setInterval('nowTime1()',1000);
     <div class="box-title">お知らせ</div>
 <div align="center">
 	<?php 
-	readfile ("https://mcpenano.net/plug/WPplugin.php");       
+	readfile ("https://倉崎県.net/plug/WPplugin.php");       
 	//　HTMLファイル読み込み
  ?>
 					</div>
