@@ -131,7 +131,7 @@
 	</h1>
 	<p>
 		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
+	</p><a href='https://xn--0vq403amku.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
 						<span id="view_clock"></span>
                     </form>
@@ -242,7 +242,7 @@
 	</h1>
 	<p>
 		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページに行く', 'wp-maintenance-page'); ?></a>
+	</p><a href='https://xn--0vq403amku.net/donation/'><?php _e('支援ページに行く', 'wp-maintenance-page'); ?></a>
 									</th>
 </table>
                     </form>
@@ -485,7 +485,7 @@ setInterval('nowTime1()',1000);
 	</h1>
 	<p>
 		<?php _e('プラグイン開発の支援をお願いします。', 'wp-maintenance-page'); ?>
-	</p><a href='https://mcpenano.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
+	</p><a href='https://xn--0vq403amku.net/donation/'><?php _e('支援ページへいく', 'wp-maintenance-page'); ?></a></th>
 </table>
                     </form>
                 </div>
@@ -518,7 +518,7 @@ setInterval('nowTime1()',1000);
     <div class="box-title">お知らせ</div>
 <div align="center">
 	<?php 
-	readfile ("https://mcpenano.net/plug/WPplugin.php");       
+	readfile ("https://xn--0vq403amku.net/plug/WPplugin.php");       
 	//　HTMLファイル読み込み
  ?>
 					</div>
