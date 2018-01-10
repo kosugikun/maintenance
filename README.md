@@ -5,7 +5,7 @@
 タグ: maintenance<br>
 必要最低限: 3.3<br>
 テスト済み: 4.9.1<br>
-安定したタグ: 1.2.5<br>
+安定したタグ: 1.2.6<br>
 ライセンス: GPLv2<br>
 ライセンス URI: http://www.gnu.org/licenses/gpl-2.0.html<br>
 
