@@ -1,7 +1,7 @@
 # WP Mintenance page
 
 貢献者: kosugikun<br>
-寄付リンク: https://mcpenano.net/donation/<br>
+寄付リンク: https://倉崎県.net/donation/<br>
 タグ: maintenance<br>
 必要最低限: 3.3<br>
 テスト済み: 4.9.1<br>
@@ -35,6 +35,11 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 ## 変更ログ
+###1.2.6
+<ui>
+	<li>プラグインホームページのリンクなどを新しい物に変更</li>
+	</ui>
+
 ### 1.2.5
 <ui>
 <li>細かな修正</li>
