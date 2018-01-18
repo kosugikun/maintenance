@@ -34,6 +34,11 @@ WP-Maintenance-page`ディレクトリにアップロードするか、WordPress
 
 
 == Changelog ==
+= 1.2.7 =
+<ui>
+<li>WorldPress V4.9.2をサポート対象にしました。</li>
+</ui>
+
 = 1.2.6 =
 <ui>
 <li>プラグインホームページのリンクなどを新しい物に変更</li>
